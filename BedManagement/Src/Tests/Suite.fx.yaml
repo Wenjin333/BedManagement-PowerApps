@@ -1,0 +1,18 @@
+"'4be9fb63-ef1b-42f1-b872-6c966200f415' As TestSuite":
+    Description: ="Manage Beds"
+    DisplayName: ="Suite"
+
+    "'053274de-54b3-4572-9de4-3b8c15b8c7de' As TestCase":
+        Description: ="Close bed"
+        DisplayName: ="Case"
+
+        Step2 As TestStep:
+            Description: ="Select 'bed icon'"
+            Screen: =Dashboard
+            Value: =Select('bed icon')
+
+        Step1 As TestStep:
+            Description: ="Select 'totalbeds'"
+            Screen: =Bed List
+            Value: =Select(totalbeds)
+

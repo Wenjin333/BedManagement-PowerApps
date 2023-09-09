@@ -1,0 +1,106 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr7c7_transfer_list_tables",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr7c7_transfer_list_table",
+    "MaxGetRowsCount": 500,
+    "Name": "Transfer_List_Tables",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr7c7_bed_id": "Bed_ID_transfer",
+      "cr7c7_destination_bay": "Destination_Bay",
+      "cr7c7_destination_bed_id": "Destination_Bed_ID",
+      "cr7c7_destination_bed_number": "Destination_Bed_Number",
+      "cr7c7_destination_ward_number": "Destination_Ward_Name",
+      "cr7c7_name": "NHS_number_transfer",
+      "cr7c7_porter_transfer": "Porter_transfer",
+      "cr7c7_transfer_date": "Transfer_Date",
+      "cr7c7_Transfer_List_ssign_bed": "Bed_Tables",
+      "cr7c7_transfer_list_table_AsyncOperations": "System Jobs",
+      "cr7c7_transfer_list_table_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr7c7_transfer_list_table_DuplicateBaseRecord": "Duplicate Records (cr7c7_transfer_list_table_DuplicateBaseRecord)",
+      "cr7c7_transfer_list_table_DuplicateMatchingRecord": "Duplicate Records (cr7c7_transfer_list_table_DuplicateMatchingRecord)",
+      "cr7c7_transfer_list_table_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr7c7_transfer_list_table_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr7c7_transfer_list_table_ProcessSession": "Process Sessions",
+      "cr7c7_transfer_list_table_SyncErrors": "Sync Errors",
+      "cr7c7_transfer_list_tableid": "Transfer_List_Table",
+      "cr7c7_transfer_time": "Transfer_Time",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Transfer_List_Tables",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Transfer_List_Tables (Views)",
+    "Name": "_cr7c7_transfer_list_table_views",
+    "RelatedEntityName": "Transfer_List_Tables",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "0443e263-a80a-4315-b577-14fbf6311adc": "Active Transfer_List_Tables",
+      "07db5c02-bcdf-4748-8cf7-40c021f6906d": "Transfer_List_Table Lookup View",
+      "2d879ae7-1b7b-48ed-94c9-549dc840c1d4": "Transfer_List_Table Advanced Find View",
+      "3b4b5156-81b5-47d0-82f3-cb7ee0e793d6": "Inactive Transfer_List_Tables",
+      "85764e7d-7b56-4250-97ef-87bbb7cba679": "Transfer_List_Table Associated View"
+    }
+  },
+  {
+    "DisplayName": "Status (Transfer_List_Tables)",
+    "Name": "cr7c7_transfer_list_table_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Transfer_List_Tables"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Transfer_List_Tables",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Transfer_List_Tables)",
+    "Name": "cr7c7_transfer_list_table_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Transfer_List_Tables"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Transfer_List_Tables",
+    "Type": "OptionSetInfo"
+  }
+]

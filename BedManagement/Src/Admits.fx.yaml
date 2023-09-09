@@ -1,0 +1,424 @@
+"Admits As screen.'tabletAutoLayout_HeaderMainFooter_ver1.0'":
+    OnVisible: =Set(recordExists, !IsBlank(LookUp(Admit_Tables, NHS_number_Admit = nhsno_admit.Text).Arrival_Time))
+
+    ScreenContainer2_2 As groupContainer.verticalAutoLayoutContainer:
+        Height: =Parent.Height
+        LayoutAlignItems: =LayoutAlignItems.Stretch
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutMode: =LayoutMode.Auto
+        Width: =Parent.Width
+        ZIndex: =3
+
+        HeaderContainer2_2 As groupContainer.horizontalAutoLayoutContainer:
+            Fill: =RGBA(56, 96, 178, 1)
+            FillPortions: =0
+            Height: =75
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            PaddingLeft: |
+                =1
+            ZIndex: =1
+
+            Header_Admits As Header:
+                HomeScreen: =Dashboard
+                LayoutMinHeight: =640
+                LayoutMinWidth: =640
+                ScreenSizeInput: =Admits.Size
+                Width: |+
+                    =Parent.Width
+                    
+
+        MainSectionContainer2_2 As groupContainer.verticalAutoLayoutContainer:
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            PaddingTop: |
+                =1
+            Visible: =Admits.Size<>600
+            ZIndex: =3
+
+            Container10 As groupContainer.horizontalAutoLayoutContainer:
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                LayoutOverflowX: =LayoutOverflow.Scroll
+                Width: |
+                    =500
+                ZIndex: =1
+
+                LeftNav_3 As LeftNav:
+                    LayoutMinHeight: =640
+                    LayoutMinWidth: =640
+                    NavItem: |+
+                        =Table({Title: "Bed List", Screen: 'Bed List', Image:"https://cdn0.iconfinder.com/data/icons/covid-19-14/64/Bed_hospital_medical_patient_icon-512.png"}, {Title: "Patient List", Screen: 'Patient List', Image:"https://cdn3.iconfinder.com/data/icons/virus-transmission-line/48/Patient-512.png"}, {Title: "Admits", Screen: Admits, Image:"https://cdn2.iconfinder.com/data/icons/coronavirus-or-covid-19/64/Artboard_15-512.png"}, {Title: "Transfers", Screen:'Transfer List', Image:"https://cdn0.iconfinder.com/data/icons/data-transfer-14/512/N_T_1273Artboard_1_copy_2-512.png"},{Title: "Discharges", Screen:'Discharge List', Image:"https://cdn3.iconfinder.com/data/icons/basic-user-interface-5/64/Door_enter_entrance_exit_leave_logout_out_quit-512.png"}, {Title: "Waiting List", Screen: 'Waiting List', Image:"https://cdn2.iconfinder.com/data/icons/coronavirus-covid19-1/49/30-512.png"}, {Title: "Clean request List", Screen: 'Clean Request List', Image:"https://cdn2.iconfinder.com/data/icons/brush-set-free/512/broom_stick_3-512.png"}, {Title: "RFID Code", Screen: 'RFID Code', Image:"https://cdn2.iconfinder.com/data/icons/sale-and-discount/32/Sale_and_Discount-05-512.png"})
+                        
+                    Width: =LeftNav_3.MenuWidth
+
+                Container4 As groupContainer.verticalAutoLayoutContainer:
+                    ContentLanguage: =Parent.Width
+                    Height: =Parent.Height
+                    LayoutDirection: =LayoutDirection.Vertical
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    LayoutOverflowY: =LayoutOverflow.Scroll
+                    Width: =1200
+                    ZIndex: =3
+
+                    Container13 As groupContainer.horizontalAutoLayoutContainer:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        FillPortions: =0
+                        Height: =60
+                        LayoutAlignItems: =LayoutAlignItems.Center
+                        LayoutGap: =10
+                        LayoutMinHeight: =100
+                        LayoutMinWidth: =250
+                        LayoutMode: =LayoutMode.Auto
+                        LayoutOverflowX: =LayoutOverflow.Scroll
+                        Width: =App.ActiveScreen.Width
+                        ZIndex: =1
+
+                        FilterBy As label:
+                            FontWeight: =FontWeight.Bold
+                            Size: =15
+                            Text: ="Filter by"
+                            Width: =100
+                            ZIndex: =1
+
+                        Rectangle6 As rectangle:
+                            Fill: =RGBA(0, 0, 0, 1)
+                            Height: =50
+                            Width: =3
+                            X: |
+                                =0
+                            ZIndex: =2
+
+                        searchbox_patient As text:
+                            Default: =""
+                            DisabledColor: =RGBA(136, 160, 209, 1)
+                            DisabledFill: =RGBA(255, 255, 255, 1)
+                            HintText: ="🔎 Bed ID or NHS NO."
+                            HoverColor: =RGBA(186, 202, 226, 1)
+                            HoverFill: =RGBA(237, 237, 237, 1)
+                            ZIndex: =3
+
+                        clearallfilter As label:
+                            Color: =RGBA(109, 49, 162, 1)
+                            OnSelect: =Reset(searchbox_patient)
+                            Text: ="Clear all filter "
+                            ZIndex: =7
+
+                        Label15 As label:
+                            Text: =
+                            ZIndex: =8
+
+                    tableArea As groupContainer.verticalAutoLayoutContainer:
+                        ContentLanguage: =
+                        FillPortions: =0
+                        Height: =550
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutMinHeight: =100
+                        LayoutMinWidth: =250
+                        LayoutMode: =LayoutMode.Auto
+                        LayoutOverflowX: =LayoutOverflow.Scroll
+                        Width: =Max(App.ActiveScreen.Width,2000)
+                        ZIndex: =3
+
+                        galHeader As groupContainer.horizontalAutoLayoutContainer:
+                            AlignInContainer: =AlignInContainer.Start
+                            FillPortions: =0
+                            Height: =50
+                            LayoutAlignItems: =LayoutAlignItems.Center
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =250
+                            LayoutMode: =LayoutMode.Auto
+                            Width: =Max(App.ActiveScreen.Width,2000)
+                            ZIndex: =1
+
+                            bedid_admit_1 As label:
+                                Align: =Align.Center
+                                AlignInContainer: =AlignInContainer.Stretch
+                                Color: =RGBA(255, 255, 255, 1)
+                                Fill: =RGBA(102, 182, 227, 1)
+                                FillPortions: =1
+                                PaddingBottom: =0
+                                PaddingTop: =0
+                                Text: ="Bed ID"
+                                ZIndex: =1
+
+                            nhsno_admit_1 As label:
+                                Align: =Align.Center
+                                AlignInContainer: =AlignInContainer.Stretch
+                                Color: =RGBA(255, 255, 255, 1)
+                                Fill: =RGBA(102, 182, 227, 1)
+                                FillPortions: =1
+                                PaddingBottom: =0
+                                PaddingTop: =0
+                                Text: ="NHS number"
+                                ZIndex: =2
+
+                            lname_admit_1 As label:
+                                Align: =Align.Center
+                                AlignInContainer: =AlignInContainer.Stretch
+                                Color: =RGBA(255, 255, 255, 1)
+                                Fill: =RGBA(102, 182, 227, 1)
+                                FillPortions: =1
+                                PaddingBottom: =0
+                                PaddingTop: =0
+                                Text: ="Last Name"
+                                ZIndex: =3
+
+                            prefer_fname_admit_1 As label:
+                                Align: =Align.Center
+                                AlignInContainer: =AlignInContainer.Stretch
+                                Color: =RGBA(255, 255, 255, 1)
+                                Fill: =RGBA(102, 182, 227, 1)
+                                FillPortions: =1
+                                PaddingBottom: =0
+                                PaddingTop: =0
+                                Text: ="Preferred Name"
+                                ZIndex: =4
+
+                            KeyMedicalCondition_admit_1 As label:
+                                Align: =Align.Center
+                                AlignInContainer: =AlignInContainer.Stretch
+                                Color: =RGBA(255, 255, 255, 1)
+                                Fill: =RGBA(102, 182, 227, 1)
+                                FillPortions: =1
+                                LayoutMinWidth: =200
+                                PaddingBottom: =0
+                                PaddingTop: =0
+                                Text: ="Key Medical conditions"
+                                ZIndex: =5
+
+                            AdmissionTime_1 As label:
+                                Align: =Align.Center
+                                AlignInContainer: =AlignInContainer.Stretch
+                                Color: =RGBA(255, 255, 255, 1)
+                                Fill: =RGBA(102, 182, 227, 1)
+                                FillPortions: =1
+                                PaddingBottom: =0
+                                PaddingTop: =0
+                                Text: ="Admission Time"
+                                ZIndex: =6
+
+                            AdmitReason_1 As label:
+                                Align: =Align.Center
+                                AlignInContainer: =AlignInContainer.Stretch
+                                Color: =RGBA(255, 255, 255, 1)
+                                Fill: =RGBA(102, 182, 227, 1)
+                                FillPortions: =1
+                                LayoutMinWidth: =200
+                                PaddingBottom: =0
+                                PaddingTop: =0
+                                Text: ="Admission Reason"
+                                ZIndex: =7
+
+                            severity_admit_1 As label:
+                                Align: =Align.Center
+                                AlignInContainer: =AlignInContainer.Stretch
+                                Color: =RGBA(255, 255, 255, 1)
+                                Fill: =RGBA(102, 182, 227, 1)
+                                FillPortions: =1
+                                PaddingBottom: =0
+                                PaddingTop: =0
+                                Text: ="Severity"
+                                ZIndex: =8
+
+                            button_admit As label:
+                                Align: =Align.Center
+                                AlignInContainer: =AlignInContainer.Stretch
+                                Color: =RGBA(255, 255, 255, 1)
+                                Fill: =RGBA(102, 182, 227, 1)
+                                Text: =" "
+                                Width: =100
+                                ZIndex: =9
+
+                            button_discharge As label:
+                                Align: =Align.Center
+                                AlignInContainer: =AlignInContainer.Stretch
+                                Color: =RGBA(255, 255, 255, 1)
+                                Fill: =RGBA(102, 182, 227, 1)
+                                FillPortions: =1
+                                LayoutMinWidth: =250
+                                PaddingBottom: =0
+                                PaddingLeft: =10
+                                PaddingRight: =10
+                                PaddingTop: =0
+                                Text: =" "
+                                Width: =160
+                                ZIndex: =10
+
+                        Container12 As groupContainer.horizontalAutoLayoutContainer:
+                            AlignInContainer: =AlignInContainer.Start
+                            FillPortions: =0
+                            Height: =550
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =250
+                            LayoutMode: =LayoutMode.Auto
+                            LayoutOverflowX: =LayoutOverflow.Scroll
+                            Width: |
+                                =Max(App.ActiveScreen.Width,2000)
+                            ZIndex: =2
+
+                            "Gal_Patient As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver5.0'":
+                                AlignInContainer: =AlignInContainer.Start
+                                DelayItemLoading: =true
+                                FillPortions: =0
+                                Items: |
+                                    =If(
+                                        searchbox_patient.Text = "🔎 Bed ID or NHS NO.",
+                                        Admit_Tables,
+                                        Search(Admit_Tables, searchbox_patient.Text, "cr7c7_name", "cr7c7_nhs_number")
+                                    )
+                                Layout: =Layout.Vertical
+                                LayoutMinHeight: =287
+                                LayoutMinWidth: =320
+                                LoadingSpinner: =LoadingSpinner.Data
+                                ShowNavigation: |+
+                                    =false
+                                    
+                                TemplatePadding: |
+                                    =5
+                                TemplateSize: |
+                                    =50
+                                Width: =Max(App.ActiveScreen.Width,2000)
+                                X: =85
+                                Y: =125
+                                ZIndex: =2
+
+                                Container3 As groupContainer.verticalAutoLayoutContainer:
+                                    Height: =Parent.TemplateHeight
+                                    LayoutMode: =LayoutMode.Auto
+                                    LayoutOverflowY: =LayoutOverflow.Scroll
+                                    Width: =Max(App.ActiveScreen.Width,2000)
+                                    ZIndex: =2
+
+                                    bedid_admit As label:
+                                        Align: =Align.Center
+                                        OnSelect: =Select(Button_discharge)
+                                        Text: |
+                                            =ThisItem.Admit_Bed_ID
+                                        Width: =bedid_admit_1.Width
+                                        ZIndex: =1
+
+                                    nhsno_admit As label:
+                                        Align: =Align.Center
+                                        OnSelect: =Select(Button_discharge)
+                                        Text: =ThisItem.NHS_number_Admit
+                                        Width: =nhsno_admit_1.Width
+                                        ZIndex: =2
+
+                                    lname_admit As label:
+                                        Align: =Align.Center
+                                        OnSelect: =Select(Button_discharge)
+                                        Text: =LookUp(Patient_Tables,NHS_number=ThisItem.NHS_number_Admit,Last_Name)
+                                        Width: =lname_admit_1.Width
+                                        ZIndex: =3
+
+                                    prefer_fname_admit As label:
+                                        Align: =Align.Center
+                                        OnSelect: =Select(Button_discharge)
+                                        Text: =LookUp(Patient_Tables,NHS_number=ThisItem.NHS_number_Admit,Preferred_first_name)
+                                        Width: =prefer_fname_admit_1.Width
+                                        ZIndex: =4
+
+                                    KeyMedicalCondition_admit As label:
+                                        Align: =Align.Center
+                                        OnSelect: =Select(Button_discharge)
+                                        Text: =LookUp(Patient_Tables,NHS_number=ThisItem.NHS_number_Admit,Key_medical_conditions)
+                                        Width: =KeyMedicalCondition_admit_1.Width
+                                        ZIndex: =5
+
+                                    Admit_Time As label:
+                                        Align: =Align.Center
+                                        OnSelect: =Select(Button_discharge)
+                                        Text: =Text(ThisItem.Admission_Time, "dd/mm/yyyy ")
+                                        Width: =AdmissionTime_1.Width
+                                        ZIndex: =6
+
+                                    Admit_Reason As label:
+                                        Align: =Align.Center
+                                        OnSelect: =Select(Button_discharge)
+                                        Overflow: =Overflow.Scroll
+                                        Text: =ThisItem.Admission_Reason
+                                        Width: =AdmitReason_1.Width
+                                        ZIndex: =7
+
+                                    severity As label:
+                                        Align: =Align.Center
+                                        OnSelect: =Select(Button_discharge)
+                                        Overflow: =Overflow.Scroll
+                                        Text: =LookUp(Patient_Tables,NHS_number=ThisItem.NHS_number_Admit,Severity)
+                                        Width: =severity_admit_1.Width
+                                        ZIndex: =8
+
+                                    button_admit_for_ReadyToadmit As button:
+                                        DisplayMode: =If(ThisItem.LookUp Patient_status_t = "Admitted", DisplayMode.Disabled, DisplayMode.Edit)
+                                        Fill: |-
+                                            =If(
+                                                IsBlank(LookUp(Patient_Tables, NHS_number = ThisItem.NHS_number_Admit)),
+                                                Color.Blue,
+                                                If(
+                                                    LookUp(Patient_Tables, NHS_number = ThisItem.NHS_number_Admit).Patient_status_t = "Admitted",
+                                                    Color.Gray,
+                                                    Color.DeepSkyBlue)
+                                            )
+                                        FillPortions: =1
+                                        LayoutMinWidth: =100
+                                        OnSelect: |-
+                                            =Patch(
+                                                Admit_Tables, 
+                                                LookUp(Admit_Tables, NHS_number_Admit = nhsno_admit.Text), 
+                                                { Arrival_Time: Now() }
+                                            );
+                                            
+                                            Patch(
+                                                Patient_Tables, 
+                                                LookUp(Patient_Tables, NHS_number = nhsno_admit.Text), 
+                                                { Patient_status_t: "Admitted" }
+                                            );
+                                            
+                                            Set(recordExists, true);
+                                        Size: =12
+                                        Text: |
+                                            =If(
+                                               LookUp(Patient_Tables, NHS_number = ThisItem.NHS_number_Admit).Patient_status_t = "Admitted",
+                                               "Arrived",
+                                               "Arrive"
+                                            )
+                                        Width: =button_admit.Width
+                                        ZIndex: =9
+
+                                    Button_discharge As button:
+                                        Fill: =RGBA(187, 221, 140, 1)
+                                        HoverColor: =RGBA(57, 168, 76, 1)
+                                        HoverFill: =ColorFade(RGBA(54, 176, 75, 100))
+                                        OnSelect: |-
+                                            =Set(Selectedbed, ThisItem.Admit_Bed_ID);
+                                            Navigate(Discharge_From_AdmitList, ScreenTransition.Fade, {BedID: Selectedbed})
+                                        Size: =12
+                                        Text: |-
+                                            =If(
+                                              IsBlank(LookUp(Discharge_List_Tables, NHS_number_discharge = ThisItem.NHS_number_Admit, Expected_Discharge_Date)),
+                                              "Start Discharge",
+                                              "Edit"
+                                              
+                                            )
+                                        ZIndex: =10
+
+    Timer1_6 As timer:
+        AutoStart: =true
+        Duration: =300000
+        Height: =37
+        OnTimerEnd: =Refresh(Admit_Tables)
+        Repeat: =true
+        Visible: =false
+        Width: =142
+        X: =20
+        Y: =37
+        ZIndex: =4
+

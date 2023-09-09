@@ -1,0 +1,105 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr7c7_discharge_list_tables",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr7c7_discharge_list_table",
+    "MaxGetRowsCount": 500,
+    "Name": "Discharge_List_Tables",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr7c7_Discharge_from_bed": "Bed_Tables",
+      "cr7c7_discharge_History": "discharge_History",
+      "cr7c7_discharge_list_table_AsyncOperations": "System Jobs",
+      "cr7c7_discharge_list_table_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr7c7_discharge_list_table_DuplicateBaseRecord": "Duplicate Records (cr7c7_discharge_list_table_DuplicateBaseRecord)",
+      "cr7c7_discharge_list_table_DuplicateMatchingRecord": "Duplicate Records (cr7c7_discharge_list_table_DuplicateMatchingRecord)",
+      "cr7c7_discharge_list_table_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr7c7_discharge_list_table_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr7c7_discharge_list_table_ProcessSession": "Process Sessions",
+      "cr7c7_discharge_list_table_SyncErrors": "Sync Errors",
+      "cr7c7_discharge_list_tableid": "Discharge_List_Table",
+      "cr7c7_discharge_status": "Discharge_Status",
+      "cr7c7_expected_discharge_date": "Expected_Discharge_Date",
+      "cr7c7_expected_discharge_day": "Expected_Discharge_Day",
+      "cr7c7_expected_discharge_start_time": "Expected_Discharge_Start_Time",
+      "cr7c7_name": "Bed_ID_discharge",
+      "cr7c7_nhs_number": "NHS_number_discharge",
+      "cr7c7_porter_discharge": "Porter_discharge",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Discharge_List_Tables",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Discharge_List_Tables (Views)",
+    "Name": "_cr7c7_discharge_list_table_views",
+    "RelatedEntityName": "Discharge_List_Tables",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "01b8e096-e66a-40fb-9bb6-ebfa8b2025a9": "Discharge_List_Table Lookup View",
+      "7e4d92a1-ac06-4871-a85c-95512772c5aa": "Discharge_List_Table Advanced Find View",
+      "8804dcce-a3f6-4e6d-9f55-95eaddec97fb": "Active Discharge_List_Tables",
+      "d15f187c-43ed-4dd8-a779-5bf6437aafdd": "Inactive Discharge_List_Tables",
+      "e7e9581e-54a5-4498-83e3-ba509807605c": "Discharge_List_Table Associated View"
+    }
+  },
+  {
+    "DisplayName": "Status (Discharge_List_Tables)",
+    "Name": "cr7c7_discharge_list_table_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Discharge_List_Tables"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Discharge_List_Tables",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Discharge_List_Tables)",
+    "Name": "cr7c7_discharge_list_table_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Discharge_List_Tables"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Discharge_List_Tables",
+    "Type": "OptionSetInfo"
+  }
+]

@@ -1,0 +1,39 @@
+{
+  "ComponentAllowCustomization": true,
+  "ComponentChangedSinceFileImport": true,
+  "ComponentManifest": {
+    "AllowAccessToGlobals": false,
+    "AllowCustomization": true,
+    "Description": "",
+    "Name": "LeftNavigation",
+    "TemplateGuid": "ebfa96d267ba4100bfb400cc30163c00"
+  },
+  "ComponentType": "CanvasComponent",
+  "CustomGroupControlTemplateName": "",
+  "CustomProperties": [
+    {
+      "Category": 0,
+      "DisplayName": "MenuWidth",
+      "Hidden": true,
+      "Name": "MenuWidth",
+      "PropertyDataTypeKey": "Number",
+      "Tooltip": "The width of my component",
+      "Type": "{\"Version\":\"1.334\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"Number\",\"EnumString\":\"\",\"Type\":[]}}"
+    }
+  ],
+  "FirstParty": true,
+  "Id": "http://microsoft.com/appmagic/Component",
+  "IsComponentLocked": true,
+  "IsComponentTemplate": true,
+  "IsCustomGroupControlTemplate": false,
+  "IsPcfControl": false,
+  "IsPremiumPcfControl": false,
+  "IsWidgetTemplate": false,
+  "LastModifiedTimestamp": "638298589015051479",
+  "Name": "ebfa96d267ba4100bfb400cc30163c00",
+  "OverridableProperties": {},
+  "SourceLibraryId": "ee9916f4-f0e7-494f-9a37-b481b1c1fe04",
+  "SourceLibraryLogicalName": "",
+  "TemplateOriginalName": "8f4d0e35dfd346d483273a82d6eeccc6",
+  "Version": "638240025370308609"
+}

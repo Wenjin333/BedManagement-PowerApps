@@ -1,0 +1,102 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr7c7_request_cleaning_list_tables",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr7c7_request_cleaning_list_table",
+    "MaxGetRowsCount": 500,
+    "Name": "Request_Cleaning_List_Tables",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr7c7_accepeted_date": "Accepted_Date_clean",
+      "cr7c7_accepeted_time": "Accepted_Time_clean",
+      "cr7c7_clean_request": "Clean_Request",
+      "cr7c7_cleaning_date": "Cleaning_Date",
+      "cr7c7_name": "Bed_ID_clean",
+      "cr7c7_request_cleaning_list_table_AsyncOperations": "System Jobs",
+      "cr7c7_request_cleaning_list_table_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr7c7_request_cleaning_list_table_DuplicateBaseRecord": "Duplicate Records (cr7c7_request_cleaning_list_table_DuplicateBaseRecord)",
+      "cr7c7_request_cleaning_list_table_DuplicateMatchingRecord": "Duplicate Records (cr7c7_request_cleaning_list_table_DuplicateMatchingRecord)",
+      "cr7c7_request_cleaning_list_table_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr7c7_request_cleaning_list_table_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr7c7_request_cleaning_list_table_ProcessSession": "Process Sessions",
+      "cr7c7_Request_Cleaning_List_Table_Request": "Bed_Tables",
+      "cr7c7_request_cleaning_list_table_SyncErrors": "Sync Errors",
+      "cr7c7_request_cleaning_list_tableid": "Request_Cleaning_List_Table",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Request_Cleaning_List_Tables",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Request_Cleaning_List_Tables (Views)",
+    "Name": "_cr7c7_request_cleaning_list_table_views",
+    "RelatedEntityName": "Request_Cleaning_List_Tables",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "31a84f8b-4ce7-4060-b2fb-57f5ed30fea9": "Request_Cleaning_List_Table Lookup View",
+      "60656c1c-6dc8-49d0-a094-ed369892e12d": "Request_Cleaning_List_Table Advanced Find View",
+      "72a8714a-f244-47d2-99a1-a9c21d555f46": "Active Request_Cleaning_List_Tables",
+      "bf8dd191-58d7-472f-8b0d-6ef49adc9208": "Request_Cleaning_List_Table Associated View",
+      "c77f17fa-cd42-4dd9-b028-bbebc30d6f20": "Inactive Request_Cleaning_List_Tables"
+    }
+  },
+  {
+    "DisplayName": "Status (Request_Cleaning_List_Tables)",
+    "Name": "cr7c7_request_cleaning_list_table_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Request_Cleaning_List_Tables"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Request_Cleaning_List_Tables",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Request_Cleaning_List_Tables)",
+    "Name": "cr7c7_request_cleaning_list_table_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Request_Cleaning_List_Tables"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Request_Cleaning_List_Tables",
+    "Type": "OptionSetInfo"
+  }
+]

@@ -1,0 +1,493 @@
+"AvailableBed As screen.'tabletAutoLayout_HeaderMainFooter_ver1.0'":
+
+    ScreenContainer2_6 As groupContainer.verticalAutoLayoutContainer:
+        Height: =Parent.Height
+        LayoutAlignItems: =LayoutAlignItems.Stretch
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutMode: =LayoutMode.Auto
+        Width: =Parent.Width
+        ZIndex: =1
+
+        MainSectionContainer2_7 As groupContainer.verticalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.Start
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMinHeight: =100
+            LayoutMinWidth: =80
+            LayoutMode: =LayoutMode.Auto
+            PaddingTop: |
+                =1
+            Visible: ='Bed List'.Size<>600
+            Width: =Parent.Width
+            ZIndex: =3
+
+            Container6_6 As groupContainer.horizontalAutoLayoutContainer:
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                Width: =1850
+                ZIndex: =1
+
+                Container6_7 As groupContainer.horizontalAutoLayoutContainer:
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    ZIndex: =1
+
+                    Container4_5 As groupContainer.verticalAutoLayoutContainer:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        Height: =Parent.Height
+                        LayoutAlignItems: =LayoutAlignItems.Stretch
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutMinHeight: =100
+                        LayoutMinWidth: =250
+                        LayoutMode: =LayoutMode.Auto
+                        LayoutOverflowY: =LayoutOverflow.Scroll
+                        Width: =Parent.Width
+                        ZIndex: =2
+
+                        Container1_2 As groupContainer.verticalAutoLayoutContainer:
+                            AlignInContainer: =AlignInContainer.SetByContainer
+                            FillPortions: =0
+                            Height: =80
+                            LayoutAlignItems: =LayoutAlignItems.Center
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =250
+                            LayoutMode: =LayoutMode.Auto
+                            PaddingLeft: =4
+                            PaddingRight: =4
+                            Width: =Parent.Width
+                            ZIndex: =1
+
+                            Icon7_1 As icon.Cancel:
+                                Color: =RGBA(56, 96, 178, 1)
+                                Height: =35
+                                Icon: =Icon.Cancel
+                                OnSelect: =Back()
+                                PaddingLeft: =5
+                                PaddingRight: =5
+                                Width: =35
+                                ZIndex: =3
+
+                            available_2 As label:
+                                Align: =Align.Center
+                                Fill: =RGBA(209, 232, 178, 1)
+                                Height: =60
+                                Text: |-
+                                    ="Available: " & CountRows(Filter(Bed_Tables, Bed_Status_t = "Available"))
+                                ZIndex: =4
+
+                        Container13_5 As groupContainer.horizontalAutoLayoutContainer:
+                            AlignInContainer: =AlignInContainer.SetByContainer
+                            FillPortions: =0
+                            Height: =60
+                            LayoutAlignItems: =LayoutAlignItems.Center
+                            LayoutGap: =10
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =250
+                            LayoutMode: =LayoutMode.Auto
+                            LayoutOverflowX: =LayoutOverflow.Scroll
+                            Width: =App.ActiveScreen.Width
+                            ZIndex: =2
+
+                            FilterBy_5 As label:
+                                FontWeight: =FontWeight.Bold
+                                Size: =15
+                                Text: ="Filter by"
+                                Width: =100
+                                ZIndex: =1
+
+                            Rectangle6_5 As rectangle:
+                                Fill: =RGBA(0, 0, 0, 1)
+                                Height: =50
+                                Width: =3
+                                X: |
+                                    =0
+                                ZIndex: =2
+
+                            searchbox_bed_patient_2 As text:
+                                Default: ="🔎 NHS Number"
+                                DisabledColor: =RGBA(136, 160, 209, 1)
+                                DisabledFill: =RGBA(255, 255, 255, 1)
+                                HintText: ="🔎 NHS Number"
+                                HoverColor: =RGBA(186, 202, 226, 1)
+                                HoverFill: =RGBA(237, 237, 237, 1)
+                                Width: =200
+                                ZIndex: =3
+
+                            filter_ward_5 As label:
+                                Align: =Align.Right
+                                Size: =15
+                                Text: |-
+                                    ="Ward: "
+                                Width: =80
+                                ZIndex: =4
+
+                            Dropdown_ward_5 As dropdown:
+                                Items: =["--Select--","Gynocology","Intensive Care","Pediatric","Neonatal ICU","Oncology","General Surgical","Check air tag","Emergency","Side","Orthopedic","Maternity"]
+                                Width: =130
+                                ZIndex: =5
+
+                            filter_severity_5 As label:
+                                Size: =15
+                                Text: ="Bay"
+                                Width: =50
+                                ZIndex: =6
+
+                            Dropdown_severity_5 As dropdown:
+                                Items: =["--Select--","A","B","C","D","E","F","G","H"]
+                                Width: =130
+                                ZIndex: =7
+
+                            filter_status_5 As label:
+                                Align: =Align.Right
+                                Size: =15
+                                Text: |-
+                                    ="Status: "
+                                Width: =80
+                                ZIndex: =8
+
+                            Dropdown_bed_status_2 As dropdown:
+                                Default: |
+                                    =If(IsBlank(varDropdownDefault), "--Select--", varDropdownDefault)
+                                Items: =["--Select--","Admitted","Cleaning","Available","Discharged","Discharging","Closed"]
+                                OnChange: |
+                                    =ClearCollect(
+                                        Collection_Bed_Tables, 
+                                        If(
+                                            Dropdown_bed_status_2.Selected.Value = "--Select--", 
+                                            Bed_Tables, 
+                                            Filter(Bed_Tables, Bed_Status_t = Dropdown_bed_status_2.Selected.Value)
+                                        )
+                                    )
+                                Width: =130
+                                ZIndex: =9
+
+                            clearallfilter_5 As label:
+                                Color: =RGBA(109, 49, 162, 1)
+                                OnSelect: =Reset(searchbox_bed_patient_2)
+                                Text: ="Clear all filter "
+                                ZIndex: =10
+
+                        tableArea_5 As groupContainer.verticalAutoLayoutContainer:
+                            AlignInContainer: =AlignInContainer.SetByContainer
+                            Height: =550
+                            LayoutDirection: =LayoutDirection.Vertical
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =250
+                            LayoutMode: =LayoutMode.Auto
+                            LayoutOverflowX: =LayoutOverflow.Scroll
+                            Width: =Parent.Width
+                            ZIndex: =3
+
+                            galHeader_5 As groupContainer.horizontalAutoLayoutContainer:
+                                AlignInContainer: =AlignInContainer.SetByContainer
+                                FillPortions: =0
+                                Height: =50
+                                LayoutAlignItems: =LayoutAlignItems.Center
+                                LayoutMinHeight: =100
+                                LayoutMinWidth: =250
+                                LayoutMode: =LayoutMode.Auto
+                                Width: |+
+                                    =1900
+                                    
+                                ZIndex: =1
+
+                                IDbed_4 As label:
+                                    Align: =Align.Center
+                                    AlignInContainer: =AlignInContainer.Stretch
+                                    Color: =RGBA(255, 255, 255, 1)
+                                    Fill: =RGBA(102, 182, 227, 1)
+                                    PaddingBottom: =0
+                                    PaddingTop: =0
+                                    Text: ="Bed ID"
+                                    ZIndex: =1
+
+                                BED_NO_4 As label:
+                                    Align: =Align.Center
+                                    AlignInContainer: =AlignInContainer.Stretch
+                                    Color: =RGBA(255, 255, 255, 1)
+                                    Fill: =RGBA(102, 182, 227, 1)
+                                    PaddingBottom: =0
+                                    PaddingTop: =0
+                                    Text: ="Bed number"
+                                    X: =SelectButton1_1.X+SelectButton1_1.Width
+                                    ZIndex: =2
+
+                                bay_4 As label:
+                                    Align: =Align.Center
+                                    AlignInContainer: =AlignInContainer.Stretch
+                                    Color: =RGBA(255, 255, 255, 1)
+                                    Fill: =RGBA(102, 182, 227, 1)
+                                    PaddingBottom: =0
+                                    PaddingTop: =0
+                                    Text: ="Bay"
+                                    ZIndex: =3
+
+                                Wardname_4 As label:
+                                    Align: =Align.Center
+                                    AlignInContainer: =AlignInContainer.Stretch
+                                    Color: =RGBA(255, 255, 255, 1)
+                                    Fill: =RGBA(102, 182, 227, 1)
+                                    PaddingBottom: =0
+                                    PaddingTop: =0
+                                    Text: ="Ward name"
+                                    ZIndex: =4
+
+                                bedstatus_4 As label:
+                                    Align: =Align.Center
+                                    AlignInContainer: =AlignInContainer.Stretch
+                                    Color: =RGBA(255, 255, 255, 1)
+                                    Fill: =RGBA(102, 182, 227, 1)
+                                    PaddingBottom: =0
+                                    PaddingTop: =0
+                                    Text: ="Bed Status"
+                                    ZIndex: =5
+
+                                typebed_4 As label:
+                                    Align: =Align.Center
+                                    AlignInContainer: =AlignInContainer.Stretch
+                                    Color: =RGBA(255, 255, 255, 1)
+                                    Fill: =RGBA(102, 182, 227, 1)
+                                    PaddingBottom: =0
+                                    PaddingTop: =0
+                                    Text: ="Bed Type"
+                                    ZIndex: =6
+
+                                bed_gender_4 As label:
+                                    Align: =Align.Center
+                                    AlignInContainer: =AlignInContainer.Stretch
+                                    Color: =RGBA(255, 255, 255, 1)
+                                    Fill: =RGBA(102, 182, 227, 1)
+                                    PaddingBottom: =0
+                                    PaddingTop: =0
+                                    Text: ="Bed gender"
+                                    ZIndex: =7
+
+                                bedavailabletime_4 As label:
+                                    Align: =Align.Center
+                                    AlignInContainer: =AlignInContainer.Stretch
+                                    Color: =RGBA(255, 255, 255, 1)
+                                    Fill: =RGBA(102, 182, 227, 1)
+                                    PaddingBottom: =0
+                                    PaddingTop: =0
+                                    Text: ="Bed available time"
+                                    ZIndex: =8
+
+                                expectedarrivaltime_4 As label:
+                                    Align: =Align.Center
+                                    AlignInContainer: =AlignInContainer.Stretch
+                                    Color: =RGBA(255, 255, 255, 1)
+                                    Fill: =RGBA(102, 182, 227, 1)
+                                    PaddingBottom: =0
+                                    PaddingTop: =0
+                                    Text: ="Expected arrival time"
+                                    ZIndex: =9
+
+                                bed_age_4 As label:
+                                    Align: =Align.Center
+                                    AlignInContainer: =AlignInContainer.Stretch
+                                    Color: =RGBA(255, 255, 255, 1)
+                                    Fill: =RGBA(102, 182, 227, 1)
+                                    PaddingBottom: =0
+                                    PaddingTop: =0
+                                    Text: ="Bed age"
+                                    X: =expectedarrivaltime_4.X+expectedarrivaltime_4.Width
+                                    ZIndex: =10
+
+                                currentNHS_4 As label:
+                                    Align: =Align.Center
+                                    AlignInContainer: =AlignInContainer.Stretch
+                                    Color: =RGBA(255, 255, 255, 1)
+                                    Fill: =RGBA(102, 182, 227, 1)
+                                    PaddingBottom: =0
+                                    PaddingTop: =0
+                                    Text: ="Current HNS number"
+                                    X: =bed_age_4.X+bed_age_4.Width
+                                    ZIndex: =11
+
+                                SelectButton1_1 As label:
+                                    Align: =Align.Center
+                                    AlignInContainer: =AlignInContainer.Stretch
+                                    Color: =RGBA(255, 255, 255, 1)
+                                    Fill: =RGBA(102, 182, 227, 1)
+                                    PaddingBottom: =0
+                                    PaddingTop: =0
+                                    Text: =""
+                                    Width: |
+                                        =200
+                                    X: =currentNHS_4.X+currentNHS_4.Width
+                                    ZIndex: =12
+
+                            Container12_5 As groupContainer.horizontalAutoLayoutContainer:
+                                AlignInContainer: =AlignInContainer.SetByContainer
+                                Height: =550
+                                LayoutMinHeight: =100
+                                LayoutMinWidth: =250
+                                LayoutMode: =LayoutMode.Auto
+                                LayoutOverflowX: =LayoutOverflow.Scroll
+                                Width: =1850
+                                ZIndex: =2
+
+                                "Gal_Patient_5 As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver5.0'":
+                                    AlignInContainer: =AlignInContainer.SetByContainer
+                                    DelayItemLoading: =true
+                                    Items: |
+                                        =If(
+                                            searchbox_bed_patient_2.Text = "🔎 NHS Number" && Dropdown_bed_status_2.Selected.Value = "--Select--",
+                                            Bed_Tables, 
+                                            searchbox_bed_patient_2.Text <> "🔎 NHS Number" && Dropdown_bed_status_2.Selected.Value = "--Select--",
+                                            Search(Bed_Tables, searchbox_bed_patient_2.Text, "cr7c7_nhs_number"),
+                                            searchbox_bed_patient_2.Text = "🔎 NHS Number" && Dropdown_bed_status_2.Selected.Value <> "--Select--",
+                                            Filter(Bed_Tables, Bed_Status_t = Dropdown_bed_status_2.Selected.Value),
+                                            Search(Filter(Bed_Tables, Bed_Status_t = Dropdown_bed_status_2.Selected.Value), searchbox_bed_patient_2.Text, "cr7c7_nhs_number")
+                                        )
+                                    Layout: =Layout.Vertical
+                                    LayoutMinHeight: =287
+                                    LayoutMinWidth: =320
+                                    LoadingSpinner: =LoadingSpinner.Data
+                                    ShowNavigation: |+
+                                        =false
+                                        
+                                    TemplatePadding: |
+                                        =5
+                                    TemplateSize: |
+                                        =50
+                                    Width: =Gal_Patient_5.TemplateWidth
+                                    X: =85
+                                    Y: =125
+                                    ZIndex: =2
+
+                                    Container3_5 As groupContainer.verticalAutoLayoutContainer:
+                                        Height: =Parent.TemplateHeight
+                                        LayoutMode: =LayoutMode.Auto
+                                        LayoutOverflowY: =LayoutOverflow.Scroll
+                                        Width: =Parent.Width
+                                        ZIndex: =2
+
+                                        IDbed_5 As label:
+                                            Align: =Align.Center
+                                            AlignInContainer: =AlignInContainer.Stretch
+                                            Fill: =RGBA(255, 255, 255, 1)
+                                            Text: =ThisItem.Bed_ID
+                                            Width: =IDbed_4.Width
+                                            X: =IDbed_4.X
+                                            ZIndex: =1
+
+                                        BED_NO_5 As label:
+                                            Align: =Align.Center
+                                            AlignInContainer: =AlignInContainer.Stretch
+                                            Fill: =RGBA(255, 255, 255, 1)
+                                            PaddingBottom: =0
+                                            PaddingTop: =0
+                                            Text: =ThisItem.Bed_Number
+                                            Width: =BED_NO_4.Width
+                                            ZIndex: =2
+
+                                        bay_5 As label:
+                                            Align: =Align.Center
+                                            AlignInContainer: =AlignInContainer.Stretch
+                                            Fill: =RGBA(255, 255, 255, 1)
+                                            PaddingBottom: =0
+                                            PaddingTop: =0
+                                            Text: =ThisItem.Bay
+                                            Width: =bay_4.Width
+                                            X: =BED_NO_5.X+BED_NO_5.Width
+                                            ZIndex: =3
+
+                                        Wardname_5 As label:
+                                            Align: =Align.Center
+                                            AlignInContainer: =AlignInContainer.Stretch
+                                            Fill: =RGBA(255, 255, 255, 1)
+                                            PaddingBottom: =0
+                                            PaddingTop: =0
+                                            Text: =ThisItem.Ward_Name
+                                            Width: =Wardname_4.Width
+                                            X: =bay_5.X+bay_5.Width
+                                            ZIndex: =4
+
+                                        bedstatus_5 As label:
+                                            Align: =Align.Center
+                                            AlignInContainer: =AlignInContainer.Stretch
+                                            Fill: =RGBA(255, 255, 255, 1)
+                                            PaddingBottom: =0
+                                            PaddingTop: =0
+                                            Text: =ThisItem.Bed_Status_t
+                                            Width: =bedstatus_4.Width
+                                            X: =Wardname_5.X+Wardname_5.Width
+                                            ZIndex: =5
+
+                                        typebed_5 As label:
+                                            Align: =Align.Center
+                                            AlignInContainer: =AlignInContainer.Stretch
+                                            Fill: =RGBA(255, 255, 255, 1)
+                                            PaddingBottom: =0
+                                            PaddingTop: =0
+                                            Text: =ThisItem.Bed_Type
+                                            Width: =typebed_4.Width
+                                            X: =bedstatus_5.X+bedstatus_5.Width
+                                            ZIndex: =6
+
+                                        bed_gender_5 As label:
+                                            Align: =Align.Center
+                                            AlignInContainer: =AlignInContainer.Stretch
+                                            Fill: =RGBA(255, 255, 255, 1)
+                                            PaddingBottom: =0
+                                            PaddingTop: =0
+                                            Text: =ThisItem.Bed_Gender
+                                            Width: =bed_gender_4.Width
+                                            X: =typebed_5.X+typebed_5.Width
+                                            ZIndex: =7
+
+                                        bedavailabletime_5 As label:
+                                            Align: =Align.Center
+                                            AlignInContainer: =AlignInContainer.Stretch
+                                            Fill: =RGBA(255, 255, 255, 1)
+                                            PaddingBottom: =0
+                                            PaddingTop: =0
+                                            Text: =
+                                            Width: =bedavailabletime_4.Width
+                                            X: =bed_gender_5.X+bed_gender_5.Width
+                                            ZIndex: =8
+
+                                        expectedarrivaltime_5 As label:
+                                            Align: =Align.Center
+                                            AlignInContainer: =AlignInContainer.Stretch
+                                            Fill: =RGBA(255, 255, 255, 1)
+                                            PaddingBottom: =0
+                                            PaddingTop: =0
+                                            Text: =ThisItem.Expected_patient_arrival_time_bed
+                                            X: =bedavailabletime_5.X+bedavailabletime_5.Width
+                                            ZIndex: =9
+
+                                        bed_age_5 As label:
+                                            Align: =Align.Center
+                                            AlignInContainer: =AlignInContainer.Stretch
+                                            Fill: =RGBA(255, 255, 255, 1)
+                                            PaddingBottom: =0
+                                            PaddingTop: =0
+                                            Text: =ThisItem.Bed_Age
+                                            Width: =bed_age_4.Width
+                                            X: =expectedarrivaltime_5.X+expectedarrivaltime_5.Width
+                                            ZIndex: =10
+
+                                        currentNHS_5 As label:
+                                            Align: =Align.Center
+                                            AlignInContainer: =AlignInContainer.Stretch
+                                            Fill: =RGBA(255, 255, 255, 1)
+                                            PaddingBottom: =0
+                                            PaddingTop: =0
+                                            Text: =ThisItem.NHS_number_current
+                                            Width: =currentNHS_4.Width
+                                            X: =bed_age_5.X+bed_age_5.Width
+                                            ZIndex: =11
+
+                                        Button_select As button:
+                                            AlignInContainer: =AlignInContainer.Stretch
+                                            DisplayMode: =If(ThisItem.Bed_Status_t = "Available", DisplayMode.Edit, DisplayMode.Disabled)
+                                            Height: =30
+                                            OnSelect: =Set(SelectedBed, ThisItem); Navigate(FastAdmission, ScreenTransition.Fade)
+                                            Text: ="Select"
+                                            Width: =150
+                                            X: =currentNHS_5.X+currentNHS_5.Width
+                                            ZIndex: =12
+

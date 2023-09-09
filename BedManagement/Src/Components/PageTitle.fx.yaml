@@ -1,0 +1,39 @@
+PageTitle As CanvasComponent:
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: |
+        =90
+    TitleText: ="文字"
+    Width: |
+        =1480
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    Container2 As groupContainer.horizontalAutoLayoutContainer:
+        Height: =90
+        LayoutAlignItems: =LayoutAlignItems.Stretch
+        LayoutMode: =LayoutMode.Auto
+        Width: =Parent.Width
+        ZIndex: =2
+
+        "'Container2-2' As groupContainer.verticalAutoLayoutContainer":
+            AlignInContainer: =AlignInContainer.SetByContainer
+            Height: =Parent.Height
+            LayoutAlignItems: =LayoutAlignItems.Stretch
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutJustifyContent: =LayoutJustifyContent.Center
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            Width: =Parent.Width
+            ZIndex: =2
+
+            "'title_bed-list' As label":
+                Align: =Align.Center
+                Size: =If(ScreenSize<1, 20)
+                Text: =PageTitle.TitleText
+                Width: =Parent.Width
+                X: =40
+                Y: =40
+                ZIndex: =1
+

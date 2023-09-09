@@ -1,0 +1,59 @@
+Component1 As CanvasComponent:
+    Fill: =RGBA(71, 112, 255, 1)
+    Height: =75
+    IconClicked: =true
+    Width: =1366
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    Group2 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =7
+
+        Icon1 As icon.Hamburger:
+            Color: =RGBA(255, 255, 255, 1)
+            Icon: =Icon.Hamburger
+            OnSelect: =Set(varOpenMenu, !varOpenMenu)
+            X: =21
+            Y: =6
+            ZIndex: =1
+
+        Icon2 As icon.Home:
+            Color: =RGBA(255, 255, 255, 1)
+            Icon: =Icon.Home
+            OnSelect: =Set(GlobalIconClicked, true)
+            X: =1148
+            Y: =6
+            ZIndex: =2
+
+        Icon3 As icon.Person:
+            Color: =RGBA(255, 255, 255, 1)
+            Icon: =Icon.Person
+            X: =1289
+            Y: =6
+            ZIndex: =3
+
+        Icon5 As icon.GlobeRefresh:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =57
+            Icon: =Icon.GlobeRefresh
+            OnSelect: =
+            Width: =52
+            X: =1224
+            Y: =9
+            ZIndex: =5
+
+        Label7 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Bold
+            Size: =20
+            Text: ="BMS"
+            X: =66
+            Y: =23
+            ZIndex: =6
+

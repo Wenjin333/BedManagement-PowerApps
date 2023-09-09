@@ -1,0 +1,133 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr7c7_as",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr7c7_a",
+    "MaxGetRowsCount": 500,
+    "Name": "Patient_Tables",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr7c7_a_AsyncOperations": "System Jobs",
+      "cr7c7_a_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr7c7_a_DuplicateBaseRecord": "Duplicate Records (cr7c7_a_DuplicateBaseRecord)",
+      "cr7c7_a_DuplicateMatchingRecord": "Duplicate Records (cr7c7_a_DuplicateMatchingRecord)",
+      "cr7c7_a_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr7c7_a_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr7c7_a_ProcessSession": "Process Sessions",
+      "cr7c7_a_SyncErrors": "Sync Errors",
+      "cr7c7_Admit_Table": "Admit_Table",
+      "cr7c7_aid": "A",
+      "cr7c7_allergens": "Allergens",
+      "cr7c7_BedManager_Mark_Patient": "Bed Managers",
+      "cr7c7_bmi": "BMI",
+      "cr7c7_dob": "DOB",
+      "cr7c7_first_name": "First_Name",
+      "cr7c7_gender": "Gender",
+      "cr7c7_key_medical_conditions": "Key_medical_conditions",
+      "cr7c7_last_name": "Last_Name",
+      "cr7c7_name": "NHS_number",
+      "cr7c7_NHS_number": "Patient->waiting",
+      "cr7c7_Nurse_Mark_Patient": "Nurses",
+      "cr7c7_Patient_Assign_Bed_Table": "Bed_Tables",
+      "cr7c7_Patient_Save_History": "Patient_Save_History",
+      "cr7c7_patient_status_t": "Patient_status_t",
+      "cr7c7_preferred_first_name": "Preferred_first_name",
+      "cr7c7_severity": "Severity",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Patient_Tables",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Patient_Tables (Views)",
+    "Name": "_cr7c7_a_views",
+    "RelatedEntityName": "Patient_Tables",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "14a10bca-8d5c-4780-bd5f-b29e9870f729": "Active AS",
+      "4debb9ae-5dcc-4ae9-ba49-5e54d2d177b7": "Inactive AS",
+      "a15608f1-e66a-4acb-8989-f79847707049": "A Associated View",
+      "e2cf87e3-7197-4b66-8277-24d24edca41a": "A Lookup View",
+      "f3169a0b-75cd-41d5-a59b-82373c8f1f43": "A Advanced Find View"
+    }
+  },
+  {
+    "DisplayName": "Status (Patient_Tables)",
+    "Name": "cr7c7_a_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Patient_Tables"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Patient_Tables",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Patient_Tables)",
+    "Name": "cr7c7_a_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Patient_Tables"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Patient_Tables",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Patient gender",
+    "Name": "cr7c7_patientgender",
+    "OptionSetInfoNameMapping": {
+      "825410001": "Male",
+      "825410002": "Female"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr7c7_gender",
+        "OptionSetReferenceEntityName": "Patient_Tables"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr7c7_gender",
+    "RelatedEntityName": "Patient_Tables",
+    "Type": "OptionSetInfo"
+  }
+]

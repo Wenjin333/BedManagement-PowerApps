@@ -1,0 +1,97 @@
+Header_2 As CanvasComponent:
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: |
+        =75
+    HomeScreen: =App.ActiveScreen
+    ScreenSizeInput: =100
+    Visible: =true
+    Width: |+
+        =1480
+        
+        
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    HeaderContainer2_7 As groupContainer.horizontalAutoLayoutContainer:
+        Fill: =RGBA(56, 96, 178, 1)
+        Height: =Parent.Height
+        LayoutAlignItems: =LayoutAlignItems.Center
+        LayoutMode: =LayoutMode.Auto
+        PaddingLeft: =4
+        PaddingRight: =4
+        Width: =Parent.Width
+        ZIndex: =4
+
+        AppName_2 As label:
+            Align: =Align.Center
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(255, 255, 0, 1)
+            DisabledColor: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(56, 96, 178, 1)
+            FillPortions: =1
+            FontWeight: =FontWeight.Bold
+            Size: =20
+            Text: ="BMS"
+            X: =45
+            Y: =18
+            ZIndex: =1
+
+        Icon2_8 As icon.Home:
+            BorderColor: =RGBA(56, 96, 178, 1)
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(56, 96, 178, 1)
+            Icon: =Icon.Home
+            OnSelect: =Navigate(Header_2.HomeScreen)
+            PaddingLeft: |
+                =8
+            PaddingRight: |+
+                =8
+                
+            X: =1120
+            Y: =5
+            ZIndex: =2
+
+        Icon5_8 As icon.GlobeRefresh:
+            BorderColor: =RGBA(56, 96, 178, 1)
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(56, 96, 178, 1)
+            Height: =57
+            Icon: =Icon.GlobeRefresh
+            OnSelect: =
+            PaddingLeft: |
+                =8
+            PaddingRight: =8
+            Width: =52
+            X: =1203
+            Y: =4
+            ZIndex: =3
+
+        UserName_2 As label:
+            Align: =Align.Center
+            AutoHeight: =true
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(255, 0, 0, 1)
+            Fill: =RGBA(56, 96, 178, 1)
+            FontWeight: =FontWeight.Semibold
+            LayoutMinWidth: =100
+            Overflow: =Overflow.Scroll
+            Text: ="Welcome, " & User().FullName
+            Visible: |-
+                =//Header_2.ScreenSizeInput<>1
+                Header_2.Width>800
+            Width: =220
+            ZIndex: =4
+
+        Image5_2 As image:
+            Height: =65
+            Image: =User().Image
+            RadiusBottomLeft: =40
+            RadiusBottomRight: =40
+            RadiusTopLeft: =40
+            RadiusTopRight: =40
+            Width: =65
+            ZIndex: =5
+

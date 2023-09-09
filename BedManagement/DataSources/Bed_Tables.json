@@ -1,0 +1,217 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr7c7_bed_tables",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr7c7_bed_table",
+    "MaxGetRowsCount": 500,
+    "Name": "Bed_Tables",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr7c7_Admit_Assign_Bed": "Admit_Assign_Bed",
+      "cr7c7_bay": "Bay",
+      "cr7c7_bed_age": "Bed_Age",
+      "cr7c7_bed_available_time": "Bed_Available_time",
+      "cr7c7_bed_gender": "Bed_Gender",
+      "cr7c7_bed_location": "bed_location",
+      "cr7c7_bed_number": "Bed_Number",
+      "cr7c7_bed_status_t": "Bed_Status_t",
+      "cr7c7_bed_table_AsyncOperations": "System Jobs",
+      "cr7c7_bed_table_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr7c7_bed_table_DuplicateBaseRecord": "Duplicate Records (cr7c7_bed_table_DuplicateBaseRecord)",
+      "cr7c7_bed_table_DuplicateMatchingRecord": "Duplicate Records (cr7c7_bed_table_DuplicateMatchingRecord)",
+      "cr7c7_bed_table_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr7c7_bed_table_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr7c7_bed_table_ProcessSession": "Process Sessions",
+      "cr7c7_bed_table_SyncErrors": "Sync Errors",
+      "cr7c7_bed_tableid": "Bed_Table",
+      "cr7c7_bed_type": "Bed_Type",
+      "cr7c7_BedManager_Manage_Bed_Table": "Bed Managers",
+      "cr7c7_Discharge_from_bed": "Discharge_from_bed",
+      "cr7c7_expected_patient_arrival_time": "Expected_patient_arrival_time_bed",
+      "cr7c7_floor": "Floor",
+      "cr7c7_name": "Bed_ID",
+      "cr7c7_nhs_number": "NHS_number_current",
+      "cr7c7_Patient_Assign_Bed_Table": "Patient_Tables",
+      "cr7c7_Request_Cleaning_bed": "Request_Cleaning_bed",
+      "cr7c7_Transfer_assign_bed": "Transfer_assign_bed",
+      "cr7c7_WaitingBed": "Waiting->Bed",
+      "cr7c7_ward_name": "Ward_Name",
+      "cr7c7_ward_number": "Ward_Number",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Bed_Tables",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Bed_Tables (Views)",
+    "Name": "_cr7c7_bed_table_views",
+    "RelatedEntityName": "Bed_Tables",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "1b27aab3-5c77-48bd-a1e5-a8543bfae4aa": "Bed_Table Associated View",
+      "499d00d0-04f2-4b59-ab3c-f56290f8075f": "Inactive Bed_Tables",
+      "510b4c78-9fb5-44d9-9c6c-a21cf05e604e": "Bed_Table Advanced Find View",
+      "510e5296-ef8c-4a4c-ac7d-fb683aa7b58f": "Active Bed_Tables",
+      "5ad583e3-6c18-4eb7-82f2-c815d161e8f2": "Bed_Table Lookup View"
+    }
+  },
+  {
+    "DisplayName": "Bed_Age",
+    "Name": "cr7c7_bed_age",
+    "OptionSetInfoNameMapping": {
+      "825410000": "0 to 1",
+      "825410001": "1 to 12",
+      "825410002": "12 to 15",
+      "825410003": "16 and over",
+      "825410004": "Any"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr7c7_bed_age",
+        "OptionSetReferenceEntityName": "Bed_Tables"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr7c7_bed_age",
+    "RelatedEntityName": "Bed_Tables",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Bed_Gender",
+    "Name": "cr7c7_bed_gender",
+    "OptionSetInfoNameMapping": {
+      "825410000": "Male",
+      "825410001": "Female",
+      "825410002": "Any"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr7c7_bed_gender",
+        "OptionSetReferenceEntityName": "Bed_Tables"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr7c7_bed_gender",
+    "RelatedEntityName": "Bed_Tables",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Bed_Type (Bed_Tables)",
+    "Name": "cr7c7_bed_table_cr7c7_bed_type",
+    "OptionSetInfoNameMapping": {
+      "825410000": "General",
+      "825410001": "ICU",
+      "825410002": "Child",
+      "825410003": "NICU",
+      "825410004": "Bariatric",
+      "825410005": "Transport",
+      "825410006": "Wound care",
+      "825410007": "Orthopedic",
+      "825410008": "Maternity"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr7c7_bed_type",
+        "OptionSetReferenceEntityName": "Bed_Tables"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr7c7_bed_type",
+    "RelatedEntityName": "Bed_Tables",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Ward_Name (Bed_Tables)",
+    "Name": "cr7c7_bed_table_cr7c7_ward_name",
+    "OptionSetInfoNameMapping": {
+      "825410000": "Gynocology",
+      "825410001": "Intensive Care",
+      "825410002": "Pediatric",
+      "825410003": "Neonatal ICU",
+      "825410004": "Oncology",
+      "825410005": "General Surgical",
+      "825410006": "Check air tag",
+      "825410007": "Emergency",
+      "825410008": "Side",
+      "825410009": "Orthopedic",
+      "825410010": "Maternity"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr7c7_ward_name",
+        "OptionSetReferenceEntityName": "Bed_Tables"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr7c7_ward_name",
+    "RelatedEntityName": "Bed_Tables",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (Bed_Tables)",
+    "Name": "cr7c7_bed_table_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Bed_Tables"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Bed_Tables",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Bed_Tables)",
+    "Name": "cr7c7_bed_table_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Bed_Tables"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Bed_Tables",
+    "Type": "OptionSetInfo"
+  }
+]

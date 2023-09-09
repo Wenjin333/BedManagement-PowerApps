@@ -1,0 +1,380 @@
+"'Discharge List' As screen.'tabletAutoLayout_HeaderMainFooter_ver1.0'":
+
+    ScreenContainer2_8 As groupContainer.verticalAutoLayoutContainer:
+        Height: =Parent.Height
+        LayoutAlignItems: =LayoutAlignItems.Stretch
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutMode: =LayoutMode.Auto
+        Width: =Parent.Width
+        ZIndex: =1
+
+        HeaderContainer2_11 As groupContainer.horizontalAutoLayoutContainer:
+            Fill: =RGBA(56, 96, 178, 1)
+            FillPortions: =0
+            Height: =75
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            PaddingLeft: |
+                =1
+            Width: =Parent.Width
+            ZIndex: =1
+
+            Header_bedList_3 As Header:
+                HomeScreen: =Dashboard
+                LayoutMinHeight: =640
+                LayoutMinWidth: =640
+                ScreenSizeInput: ='Discharge List'.Size
+                Width: |+
+                    =Parent.Width
+                    
+
+        MainSectionContainer2_10 As groupContainer.verticalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMinHeight: =100
+            LayoutMinWidth: =80
+            LayoutMode: =LayoutMode.Auto
+            PaddingTop: |
+                =1
+            Visible: ='Discharge List'.Size<>600
+            Width: =550
+            ZIndex: =3
+
+            Container6_9 As groupContainer.horizontalAutoLayoutContainer:
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                ZIndex: =1
+
+                Container6_10 As groupContainer.horizontalAutoLayoutContainer:
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    ZIndex: =1
+
+                    LeftNavBed_3 As LeftNav:
+                        LayoutMinHeight: =640
+                        LayoutMinWidth: =640
+                        NavItem: |+
+                            =Table({Title: "Bed List", Screen: 'Discharge List', Image:"https://cdn0.iconfinder.com/data/icons/covid-19-14/64/Bed_hospital_medical_patient_icon-512.png"}, {Title: "Patient List", Screen: 'Patient List', Image:"https://cdn3.iconfinder.com/data/icons/virus-transmission-line/48/Patient-512.png"}, {Title: "Admits", Screen: Admits, Image:"https://cdn2.iconfinder.com/data/icons/coronavirus-or-covid-19/64/Artboard_15-512.png"}, {Title: "Transfers", Screen: App.ActiveScreen, Image:"https://cdn0.iconfinder.com/data/icons/data-transfer-14/512/N_T_1273Artboard_1_copy_2-512.png"},{Title: "Discharges", Screen: App.ActiveScreen, Image:"https://cdn3.iconfinder.com/data/icons/basic-user-interface-5/64/Door_enter_entrance_exit_leave_logout_out_quit-512.png"}, {Title: "Waiting List", Screen: 'Waiting List', Image:"https://cdn2.iconfinder.com/data/icons/coronavirus-covid19-1/49/30-512.png"}, {Title: "Clean request List", Screen: App.ActiveScreen, Image:"https://cdn2.iconfinder.com/data/icons/brush-set-free/512/broom_stick_3-512.png"}, {Title: "RFID Code", Screen: 'RFID Code', Image:"https://cdn2.iconfinder.com/data/icons/sale-and-discount/32/Sale_and_Discount-05-512.png"})
+                            
+                        Width: =LeftNavBed_3.MenuWidth
+
+                    Container4_7 As groupContainer.verticalAutoLayoutContainer:
+                        Height: =Parent.Height
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutMinHeight: =100
+                        LayoutMinWidth: =250
+                        LayoutMode: =LayoutMode.Auto
+                        Width: =1200
+                        ZIndex: =2
+
+                        Container1_4 As groupContainer.verticalAutoLayoutContainer:
+                            AlignInContainer: =AlignInContainer.SetByContainer
+                            FillPortions: =0
+                            Height: =80
+                            LayoutAlignItems: =LayoutAlignItems.Center
+                            LayoutGap: =50
+                            LayoutJustifyContent: =LayoutJustifyContent.Center
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =250
+                            LayoutMode: =LayoutMode.Auto
+                            PaddingLeft: =4
+                            PaddingRight: =4
+                            Width: =Parent.Width
+                            ZIndex: =1
+
+                            Rectangle3 As rectangle:
+                                AlignInContainer: =AlignInContainer.Center
+                                Fill: =RGBA(255, 255, 255, 1)
+                                Height: =60
+                                Width: =Parent.Width
+                                ZIndex: =1
+
+                        Container13_7 As groupContainer.horizontalAutoLayoutContainer:
+                            AlignInContainer: =AlignInContainer.SetByContainer
+                            FillPortions: =0
+                            Height: =60
+                            LayoutAlignItems: =LayoutAlignItems.Center
+                            LayoutGap: =10
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =250
+                            LayoutMode: =LayoutMode.Auto
+                            LayoutOverflowX: =LayoutOverflow.Scroll
+                            LayoutOverflowY: =LayoutOverflow.Scroll
+                            Width: =Parent.Width
+                            ZIndex: =2
+
+                            FilterBy_7 As label:
+                                FontWeight: =FontWeight.Bold
+                                Size: =15
+                                Text: ="Filter by"
+                                Width: =100
+                                ZIndex: =1
+
+                            Rectangle6_7 As rectangle:
+                                Fill: =RGBA(0, 0, 0, 1)
+                                Height: =50
+                                Width: =3
+                                X: |
+                                    =0
+                                ZIndex: =2
+
+                            searchbox_discharge As text:
+                                Default: =""
+                                DisabledColor: =RGBA(136, 160, 209, 1)
+                                DisabledFill: =RGBA(255, 255, 255, 1)
+                                HintText: ="🔎 Bed ID"
+                                HoverColor: =RGBA(186, 202, 226, 1)
+                                HoverFill: =RGBA(237, 237, 237, 1)
+                                Width: =200
+                                ZIndex: =3
+
+                            filter_status_6 As label:
+                                Align: =Align.Right
+                                Size: =15
+                                Text: |-
+                                    ="Status: "
+                                Width: =80
+                                ZIndex: =6
+
+                            Dropdown_discharge As dropdown:
+                                Default: |
+                                    =If(IsBlank(varDropdownDefault), "--Select--", varDropdownDefault)
+                                Items: =["--Select--","Discharging","Discharged"]
+                                OnChange: |
+                                    =ClearCollect(
+                                        Collection_Bed_Tables, 
+                                        If(
+                                            Dropdown_discharge.Selected.Value = "--Select--", 
+                                            Bed_Tables, 
+                                            Filter(Bed_Tables, Bed_Status_t = Dropdown_discharge.Selected.Value)
+                                        )
+                                    )
+                                Width: =150
+                                ZIndex: =7
+
+                            clearallfilter_7 As label:
+                                Color: =RGBA(109, 49, 162, 1)
+                                OnSelect: |-
+                                    =Reset(searchbox_discharge);
+                                    Reset(Dropdown_discharge)
+                                Text: ="Clear all filter "
+                                ZIndex: =10
+
+                        tableArea_7 As groupContainer.verticalAutoLayoutContainer:
+                            FillPortions: =0
+                            Height: =550
+                            LayoutDirection: =LayoutDirection.Vertical
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =250
+                            LayoutMode: =LayoutMode.Auto
+                            LayoutOverflowX: =LayoutOverflow.Scroll
+                            Width: =Max(ScreenSize.ExtraLarge,2000)
+                            ZIndex: =3
+
+                            galHeader_7 As groupContainer.horizontalAutoLayoutContainer:
+                                AlignInContainer: =AlignInContainer.Start
+                                FillPortions: =0
+                                Height: =50
+                                LayoutAlignItems: =LayoutAlignItems.Center
+                                LayoutMinHeight: =100
+                                LayoutMinWidth: =250
+                                LayoutMode: =LayoutMode.Auto
+                                Width: =Max(ScreenSize.ExtraLarge,2000)
+                                ZIndex: =1
+
+                                bedID_discharge_2 As label:
+                                    Align: =Align.Center
+                                    AlignInContainer: =AlignInContainer.Stretch
+                                    Color: =RGBA(255, 255, 255, 1)
+                                    Fill: =RGBA(102, 182, 227, 1)
+                                    FillPortions: =1
+                                    PaddingBottom: =0
+                                    PaddingTop: =0
+                                    Text: ="Bed ID"
+                                    ZIndex: =1
+
+                                BED_NO_discharge_2 As label:
+                                    Align: =Align.Center
+                                    AlignInContainer: =AlignInContainer.Stretch
+                                    Color: =RGBA(255, 255, 255, 1)
+                                    Fill: =RGBA(102, 182, 227, 1)
+                                    FillPortions: =1
+                                    PaddingBottom: =0
+                                    PaddingTop: =0
+                                    Text: ="NHS Number"
+                                    ZIndex: =2
+
+                                ExpectedDischargeDate_clean_2 As label:
+                                    Align: =Align.Center
+                                    AlignInContainer: =AlignInContainer.Stretch
+                                    Color: =RGBA(255, 255, 255, 1)
+                                    Fill: =RGBA(102, 182, 227, 1)
+                                    FillPortions: =1
+                                    PaddingBottom: =0
+                                    PaddingTop: =0
+                                    Text: ="Expected Discharge Date"
+                                    ZIndex: =3
+
+                                Expected_Discharge_Day_clean_2 As label:
+                                    Align: =Align.Center
+                                    AlignInContainer: =AlignInContainer.Stretch
+                                    Color: =RGBA(255, 255, 255, 1)
+                                    Fill: =RGBA(102, 182, 227, 1)
+                                    FillPortions: =1
+                                    PaddingBottom: =0
+                                    PaddingTop: =0
+                                    Text: ="Expected Discharge Day"
+                                    ZIndex: =4
+
+                                Expected_Discharge_StartTime_clean_2 As label:
+                                    Align: =Align.Center
+                                    AlignInContainer: =AlignInContainer.Stretch
+                                    Color: =RGBA(255, 255, 255, 1)
+                                    Fill: =RGBA(102, 182, 227, 1)
+                                    FillPortions: =1
+                                    PaddingBottom: =0
+                                    PaddingTop: =0
+                                    Text: ="Exp. Discharge Start Time"
+                                    ZIndex: =5
+
+                                Porter_clean_2 As label:
+                                    Align: =Align.Center
+                                    AlignInContainer: =AlignInContainer.Stretch
+                                    Color: =RGBA(255, 255, 255, 1)
+                                    Fill: =RGBA(102, 182, 227, 1)
+                                    FillPortions: =1
+                                    PaddingBottom: =0
+                                    PaddingTop: =0
+                                    Text: ="Porter"
+                                    ZIndex: =6
+
+                                Discharge_status_1 As label:
+                                    Align: =Align.Center
+                                    AlignInContainer: =AlignInContainer.Stretch
+                                    Color: =RGBA(255, 255, 255, 1)
+                                    Fill: =RGBA(102, 182, 227, 1)
+                                    FillPortions: =1
+                                    Text: ="Discharge Status"
+                                    ZIndex: =7
+
+                            Container12_7 As groupContainer.horizontalAutoLayoutContainer:
+                                AlignInContainer: =AlignInContainer.Start
+                                FillPortions: =0
+                                Height: =550
+                                LayoutMinHeight: =100
+                                LayoutMinWidth: =250
+                                LayoutMode: =LayoutMode.Auto
+                                LayoutOverflowX: =LayoutOverflow.Scroll
+                                Width: =Max(ScreenSize.ExtraLarge,2000)
+                                ZIndex: =2
+
+                                "Gallery3 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+                                    DelayItemLoading: =true
+                                    Items: |
+                                        =If(
+                                            searchbox_discharge.Text = "🔎 Bed ID" && Dropdown_discharge.Selected.Value = "--Select--",
+                                            Discharge_List_Tables, 
+                                            searchbox_discharge.Text <> "🔎 Bed ID" && Dropdown_discharge.Selected.Value = "--Select--",
+                                            Search(Discharge_List_Tables, searchbox_discharge.Text, "cr7c7_name"),
+                                            searchbox_discharge.Text = "🔎 Bed ID" && Dropdown_discharge.Selected.Value <> "--Select--",
+                                            Filter(Discharge_List_Tables, Discharge_Status = Dropdown_discharge.Selected.Value),
+                                            Search(Filter(Discharge_List_Tables, Discharge_Status = Dropdown_discharge.Selected.Value), searchbox_discharge.Text, "cr7c7_name")
+                                        )
+                                    Layout: =Layout.Vertical
+                                    LayoutMinHeight: =287
+                                    LayoutMinWidth: =320
+                                    LoadingSpinner: =LoadingSpinner.Data
+                                    TemplatePadding: =0
+                                    TemplateSize: =104
+                                    Width: =Parent.Width
+                                    ZIndex: =1
+
+                                    Container3_7 As groupContainer.verticalAutoLayoutContainer:
+                                        Height: =Parent.TemplateHeight
+                                        LayoutMode: =LayoutMode.Auto
+                                        Width: =Parent.Width
+                                        ZIndex: =8
+
+                                        bedID_discharge_3 As label:
+                                            Align: =Align.Center
+                                            Fill: =RGBA(255, 255, 255, 1)
+                                            FillPortions: =1
+                                            Text: =ThisItem.Bed_ID_discharge
+                                            Width: =bedID_discharge_2.Width
+                                            ZIndex: =1
+
+                                        BED_NO_discharge_3 As label:
+                                            Align: =Align.Center
+                                            Fill: =RGBA(255, 255, 255, 1)
+                                            FillPortions: =1
+                                            PaddingBottom: =0
+                                            PaddingTop: =0
+                                            Text: =ThisItem.NHS_number_discharge
+                                            Width: =BED_NO_discharge_2.Width
+                                            ZIndex: =2
+
+                                        "'Expected Discharge Date_clean_3' As label":
+                                            Align: =Align.Center
+                                            Fill: =RGBA(255, 255, 255, 1)
+                                            FillPortions: =1
+                                            PaddingBottom: =0
+                                            PaddingTop: =0
+                                            Text: =ThisItem.Expected_Discharge_Date
+                                            ZIndex: =3
+
+                                        Expected_Discharge_Day_clean_3 As label:
+                                            Align: =Align.Center
+                                            Fill: =RGBA(255, 255, 255, 1)
+                                            FillPortions: =1
+                                            PaddingBottom: =0
+                                            PaddingTop: =0
+                                            Text: =ThisItem.Expected_Discharge_Day
+                                            Width: =Expected_Discharge_Day_clean_2.Width
+                                            ZIndex: =4
+
+                                        "'Exp. Discharge Start Time_clean_3' As label":
+                                            Align: =Align.Center
+                                            Fill: =RGBA(255, 255, 255, 1)
+                                            FillPortions: =1
+                                            PaddingBottom: =0
+                                            PaddingTop: =0
+                                            Text: =ThisItem.Expected_Discharge_Start_Time
+                                            Width: =Expected_Discharge_StartTime_clean_2.Width
+                                            ZIndex: =5
+
+                                        Porter_clean__3 As label:
+                                            Align: =Align.Center
+                                            Fill: =RGBA(255, 255, 255, 1)
+                                            FillPortions: =1
+                                            PaddingBottom: =0
+                                            PaddingTop: =0
+                                            Text: =ThisItem.Porter_discharge
+                                            Width: =Porter_clean_2.Width
+                                            ZIndex: =6
+
+                                        Discharge_status_2 As label:
+                                            Align: =Align.Center
+                                            Fill: =RGBA(255, 255, 255, 1)
+                                            FillPortions: =1
+                                            PaddingBottom: =0
+                                            PaddingTop: =0
+                                            Text: =ThisItem.Discharge_Status
+                                            Width: =Discharge_status_1.Width
+                                            ZIndex: =7
+
+    Timer1_2 As timer:
+        AutoStart: =true
+        Duration: =3000
+        Height: =37
+        OnTimerEnd: =Refresh(Discharge_List_Tables)
+        Repeat: =true
+        Visible: =false
+        Width: =142
+        X: =20
+        Y: =37
+        ZIndex: =2
+

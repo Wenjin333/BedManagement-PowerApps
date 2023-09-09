@@ -1,0 +1,696 @@
+"PatientInfo_BedList As screen.'tabletAutoLayout_HeaderMainFooter_ver1.0'":
+    OnVisible: |
+        =Set(Current_NHS_Number, LookUp(Bed_Tables, Bed_ID = Selected_Bed_ID).NHS_number_current);
+        Set(AdmitBedID, LookUp(Admit_Tables, Admit_Bed_ID = Selected_Bed_ID).Admit_Bed_ID);
+        UpdateContext({IsTransferring: false})
+
+    ScreenContainer1_2 As groupContainer.verticalAutoLayoutContainer:
+        Height: =Parent.Height
+        LayoutAlignItems: =LayoutAlignItems.Stretch
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutMode: =LayoutMode.Auto
+        Width: =Parent.Width
+        ZIndex: =1
+
+        HeaderContainer2_12 As groupContainer.horizontalAutoLayoutContainer:
+            Fill: =RGBA(56, 96, 178, 1)
+            FillPortions: =0
+            Height: =75
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            PaddingLeft: |
+                =1
+            ZIndex: =1
+
+            Header_Admits_5 As Header_1:
+                HomeScreen: =Dashboard
+                LayoutMinHeight: =640
+                LayoutMinWidth: =640
+                ScreenSizeInput: =Admits.Size
+                Width: |+
+                    =Parent.Width
+                    
+
+        MainSectionContainer2_11 As groupContainer.verticalAutoLayoutContainer:
+            Height: =FastAdmission.Height-ScreenContainer1_2.Height
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            LayoutOverflowX: =LayoutOverflow.Scroll
+            LayoutOverflowY: =LayoutOverflow.Scroll
+            PaddingTop: |
+                =1
+            Visible: =Admits.Size<>600
+            ZIndex: =2
+
+            Container10_5 As groupContainer.horizontalAutoLayoutContainer:
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                LayoutOverflowX: =LayoutOverflow.Scroll
+                Width: |
+                    =500
+                ZIndex: =2
+
+                Container20_3 As groupContainer.horizontalAutoLayoutContainer:
+                    Height: =500
+                    LayoutAlignItems: =LayoutAlignItems.Stretch
+                    LayoutDirection: =LayoutDirection.Vertical
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    LayoutOverflowY: =LayoutOverflow.Scroll
+                    LayoutWrap: =true
+                    ZIndex: =4
+
+                    Container21_3 As groupContainer.horizontalAutoLayoutContainer:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        FillPortions: =3
+                        Height: =App.ActiveScreen.Height
+                        LayoutMinHeight: =100
+                        LayoutMinWidth: =250
+                        LayoutMode: =LayoutMode.Auto
+                        LayoutOverflowY: =LayoutOverflow.Scroll
+                        Width: =Max(App.ActiveScreen.Width,2000)
+                        ZIndex: =1
+
+                        Container24_3 As groupContainer.horizontalAutoLayoutContainer:
+                            Height: =768
+                            LayoutMinHeight: =800
+                            LayoutMinWidth: =500
+                            LayoutMode: =LayoutMode.Auto
+                            LayoutOverflowX: =LayoutOverflow.Scroll
+                            Width: =App.ActiveScreen.Width
+                            ZIndex: =2
+
+                            Container30_2 As groupContainer.manualLayoutContainer:
+                                AlignInContainer: =AlignInContainer.SetByContainer
+                                Height: =Parent.Height
+                                LayoutMinHeight: =100
+                                LayoutMinWidth: =800
+                                Width: =375
+                                ZIndex: =1
+
+                                Label16_4 As label:
+                                    Align: =Align.Center
+                                    Fill: =RGBA(219, 219, 219, 1)
+                                    FontWeight: =FontWeight.Bold
+                                    Height: =47
+                                    Size: =If(App.ActiveScreen.Size>1,20,13)
+                                    Text: ="Patient Information"
+                                    Width: =286
+                                    X: =Label17_12.X+Label17_12.Width/2-10
+                                    Y: =40
+                                    ZIndex: =2
+
+                                Label17_12 As label:
+                                    Align: =Align.Right
+                                    FontWeight: =FontWeight.Bold
+                                    Size: =If(App.ActiveScreen.Width<420,10,16)
+                                    Text: |-
+                                        ="Name:"
+                                    Width: =172
+                                    X: =100
+                                    Y: =100
+                                    ZIndex: =3
+
+                                Label19_9 As label:
+                                    Size: =If(App.ActiveScreen.Size>1,16,12)
+                                    Text: |-
+                                        =If(
+                                            IsBlank(Current_NHS_Number),
+                                            "",
+                                            LookUp(Patient_Tables, NHS_number = Current_NHS_Number).First_Name & " " & LookUp(Patient_Tables, NHS_number = Current_NHS_Number).Last_Name
+                                        )
+                                    Width: =260
+                                    X: =Label17_12.X+2+Label17_12.Width
+                                    Y: |
+                                        =Label17_12.Y
+                                    ZIndex: =4
+
+                                Label17_13 As label:
+                                    Align: =Align.Right
+                                    FontWeight: =FontWeight.Bold
+                                    Size: =If(App.ActiveScreen.Width<420,10,16)
+                                    Text: |-
+                                        ="Gender:"
+                                    Width: =172
+                                    X: =100
+                                    Y: =If(App.ActiveScreen.Width<420,Label17_21.Y+2+40,Label17_21.Y+10+40)
+                                    ZIndex: =5
+
+                                Label19_12 As label:
+                                    BorderColor: =RGBA(255, 191, 0, 1)
+                                    Size: =If(App.ActiveScreen.Size>1,16,12)
+                                    Text: |-
+                                        =If(
+                                            IsBlank(Current_NHS_Number),
+                                            "",
+                                            LookUp(Patient_Tables, NHS_number = Current_NHS_Number).Gender
+                                        )
+                                    X: =Label17_13.X+2+Label17_13.Width
+                                    Y: =Label17_13.Y
+                                    ZIndex: =6
+
+                                Label17_14 As label:
+                                    Align: =Align.Right
+                                    FontWeight: =FontWeight.Bold
+                                    Size: =If(App.ActiveScreen.Width<420,10,16)
+                                    Text: |-
+                                        ="Patient Status:"
+                                    Width: =172
+                                    X: =100
+                                    Y: =If(App.ActiveScreen.Width<420,Label17_13.Y+2+40,Label17_13.Y+10+40)
+                                    ZIndex: =7
+
+                                Label19_13 As label:
+                                    Size: =If(App.ActiveScreen.Size>1,16,12)
+                                    Text: |-
+                                        =If(
+                                            IsBlank(Current_NHS_Number),
+                                            "",
+                                            LookUp(Patient_Tables, NHS_number = Current_NHS_Number).NHS_number
+                                        )
+                                    X: =Label17_21.X+2+Label17_21.Width
+                                    Y: |
+                                        =Label17_21.Y
+                                    ZIndex: =8
+
+                                Label17_15 As label:
+                                    Align: =Align.Right
+                                    FontWeight: =FontWeight.Bold
+                                    Size: =If(App.ActiveScreen.Width<420,10,16)
+                                    Text: |-
+                                        ="Age:"
+                                    Width: =172
+                                    X: =100
+                                    Y: =If(App.ActiveScreen.Width<420,Label17_14.Y+2+40,Label17_14.Y+10+40)
+                                    ZIndex: =9
+
+                                Label19_14 As label:
+                                    Size: =If(App.ActiveScreen.Size>1,16,12)
+                                    Text: |+
+                                        =If(
+                                            IsBlank(Current_NHS_Number),
+                                            "",
+                                            RoundDown(
+                                                DateDiff(
+                                                    LookUp(Patient_Tables, NHS_number = Current_NHS_Number).DOB,
+                                                    Today()
+                                                ) / 365,
+                                            0)
+                                        )
+                                        
+                                        
+                                    X: =Label17_15.X+2+Label17_15.Width
+                                    Y: =Label17_15.Y
+                                    ZIndex: =10
+
+                                Label17_16 As label:
+                                    Align: =Align.Right
+                                    FontWeight: =FontWeight.Bold
+                                    Size: =If(App.ActiveScreen.Width<420,10,16)
+                                    Text: |-
+                                        ="Severity:"
+                                    Width: =122
+                                    X: =146
+                                    Y: =If(App.ActiveScreen.Width<420,Label17_23.Y+2+40,Label17_23.Y+10+40)
+                                    ZIndex: =11
+
+                                Icon6_1 As icon.Cancel:
+                                    Height: =35
+                                    HoverFill: =RGBA(219, 219, 219, 1)
+                                    Icon: =Icon.Cancel
+                                    OnSelect: =Back()
+                                    Width: =35
+                                    X: =27
+                                    Y: =15
+                                    ZIndex: =12
+
+                                bedlistpopup_dropdown As dropdown:
+                                    BorderThickness: =1
+                                    Default: |-
+                                        =If(
+                                            IsBlank(LookUp(Patient_Tables, NHS_number = Current_NHS_Number)),
+                                            "", 
+                                        If(
+                                            IsBlank(LookUp(Patient_Tables, NHS_number = Current_NHS_Number).Severity), 
+                                            "", 
+                                            LookUp(Patient_Tables, NHS_number = Current_NHS_Number).Severity
+                                        )
+                                        )
+                                    DisplayMode: =If(IsEditing, DisplayMode.Edit, DisplayMode.View)
+                                    Items: =["","minor","moderate","major","extreme"]
+                                    Width: =107
+                                    X: =Label17_16.X+2+Label17_16.Width
+                                    Y: =Label17_16.Y
+                                    ZIndex: =13
+
+                                Label17_21 As label:
+                                    Align: =Align.Right
+                                    FontWeight: =FontWeight.Bold
+                                    Size: =If(App.ActiveScreen.Width<420,10,16)
+                                    Text: |-
+                                        ="NHS Number:"
+                                    Width: =172
+                                    X: =100
+                                    Y: =If(App.ActiveScreen.Width<420,Label17_12.Y+2+40,Label17_12.Y+10+40)
+                                    ZIndex: =14
+
+                                Label17_22 As label:
+                                    FontWeight: =FontWeight.Bold
+                                    Size: =If(App.ActiveScreen.Width<420,10,16)
+                                    Text: |-
+                                        ="BMI:"
+                                    Width: =71
+                                    X: |
+                                        =Label17_15.X+Label17_15.Width+bedlistpopup_dropdown.Width+2+4+Self.Width
+                                    Y: =Label17_15.Y
+                                    ZIndex: =15
+
+                                Label17_23 As label:
+                                    Align: =Align.Right
+                                    FontWeight: =FontWeight.Bold
+                                    Size: =If(App.ActiveScreen.Width<420,10,16)
+                                    Text: |-
+                                        ="Arrival Time:"
+                                    Width: =172
+                                    X: =100
+                                    Y: =If(App.ActiveScreen.Width<420,Label17_15.Y+2+40,Label17_15.Y+10+40)
+                                    ZIndex: =16
+
+                                bedpopup_medical As text:
+                                    Default: |-
+                                        =If(
+                                            IsBlank(LookUp(Patient_Tables, NHS_number = Current_NHS_Number)),
+                                            "", 
+                                        If(
+                                            IsBlank(LookUp(Patient_Tables, NHS_number = Current_NHS_Number).Key_medical_conditions), 
+                                            "", 
+                                            LookUp(Patient_Tables, NHS_number = Current_NHS_Number).Key_medical_conditions
+                                        )
+                                        )
+                                    DisplayMode: =If(IsEditing, DisplayMode.Edit, DisplayMode.View)
+                                    Height: =Label21.Height
+                                    Width: =300
+                                    X: =Label21.X+2+Label21.Width
+                                    Y: =Label21.Y
+                                    ZIndex: =18
+
+                                bedpopup_arrivaltime As text:
+                                    Default: |-
+                                        =If(
+                                            IsBlank(LookUp(Patient_Tables, NHS_number = Current_NHS_Number)),
+                                            "", 
+                                        If(
+                                            IsBlank(LookUp(Patient_Tables, NHS_number = Current_NHS_Number).Allergens), 
+                                            "", 
+                                            LookUp(Patient_Tables, NHS_number = Current_NHS_Number).Allergens
+                                        )
+                                        )
+                                    DisplayMode: =If(IsEditing, DisplayMode.Edit, DisplayMode.View)
+                                    Width: =180
+                                    X: =Label17_20.X+2+Label17_20.Width
+                                    Y: =Label17_20.Y
+                                    ZIndex: =19
+
+                                bedpopup_bmi As text:
+                                    Default: |-
+                                        =If(
+                                            IsBlank(LookUp(Patient_Tables, NHS_number = Current_NHS_Number)),
+                                            "", 
+                                        If(
+                                            IsBlank(LookUp(Patient_Tables, NHS_number = Current_NHS_Number).BMI), 
+                                            "", 
+                                            LookUp(Patient_Tables, NHS_number = Current_NHS_Number).BMI
+                                        )
+                                        )
+                                    DisplayMode: =If(IsEditing, DisplayMode.Edit, DisplayMode.View)
+                                    Width: =107
+                                    X: |
+                                        =Label17_22.X+2+Label17_22.Width
+                                    Y: =Label17_22.Y
+                                    ZIndex: =20
+
+                                severity_right As label:
+                                    Text: |-
+                                        =If(
+                                            IsBlank(Current_NHS_Number),
+                                            "",
+                                            LookUp(Admit_Tables, NHS_number_Admit = Current_NHS_Number).Arrival_Time
+                                        )
+                                    X: =287
+                                    Y: =Label17_23.Y
+                                    ZIndex: =21
+
+                                Label21 As label:
+                                    Align: =Align.Right
+                                    FontWeight: =FontWeight.Bold
+                                    Height: =50
+                                    Size: =If(App.ActiveScreen.Width<420,10,16)
+                                    Text: |-
+                                        ="Key Medical Conditions:"
+                                    Width: =270
+                                    Y: =500
+                                    ZIndex: =22
+
+                                Label17_20 As label:
+                                    Align: =Align.Right
+                                    FontWeight: =FontWeight.Bold
+                                    Size: =If(App.ActiveScreen.Width<420,10,16)
+                                    Text: |-
+                                        ="Allergens:"
+                                    Width: =122
+                                    X: =146
+                                    Y: =If(App.ActiveScreen.Width<420,Label17_16.Y+2+40,Label17_16.Y+10+40)
+                                    ZIndex: =23
+
+                                Button3_transfer_1 As button:
+                                    BorderThickness: =0
+                                    Color: =RGBA(0, 0, 0, 1)
+                                    Fill: =RGBA(255, 210, 51, 1)
+                                    Height: =38
+                                    OnSelect: |-
+                                        =UpdateContext({IsEditing: true});
+                                    Text: ="Edit"
+                                    Visible: =!IsEditing
+                                    Width: =106
+                                    X: =Button3_transfer_2.X-Self.Width-20
+                                    Y: =Button3_transfer_2.Y
+                                    ZIndex: =24
+
+                                Button3_transfer_2 As button:
+                                    BorderThickness: =0
+                                    Color: =RGBA(0, 0, 0, 1)
+                                    Fill: =RGBA(219, 219, 219, 1)
+                                    Height: =38
+                                    OnSelect: |-
+                                        =UpdateContext({IsEditing: false})
+                                    Text: ="Cancel"
+                                    Visible: =IsEditing
+                                    Width: =106
+                                    X: =(App.ActiveScreen.Width/2-Self.Width/2)/2
+                                    Y: |
+                                        =Label21.Y+100
+                                    ZIndex: =25
+
+                                Button3_transfer_3 As button:
+                                    BorderThickness: =0
+                                    Color: =RGBA(0, 0, 0, 1)
+                                    Fill: =RGBA(255, 210, 51, 1)
+                                    Height: =38
+                                    OnSelect: |-
+                                        =Patch(
+                                            Patient_Tables,
+                                            LookUp(Patient_Tables, NHS_number = Current_NHS_Number),
+                                            {
+                                                Severity: bedlistpopup_dropdown.Selected.Value,
+                                                Key_medical_conditions: bedpopup_medical.Text,
+                                                Allergens: bedpopup_arrivaltime.Text,
+                                                BMI:bedpopup_bmi.Text
+                                            }
+                                        );
+                                        UpdateContext({IsEditing: false});
+                                        Notify("Data saved successfully.", NotificationType.Success)
+                                    Text: ="Save"
+                                    Visible: =IsEditing
+                                    Width: =106
+                                    X: =Button3_transfer_2.X+Button3_transfer_2.Width+20
+                                    Y: =Button3_transfer_2.Y
+                                    ZIndex: =26
+
+                                Label2 As label:
+                                    Text: |-
+                                        =If(
+                                            IsBlank(LookUp(Patient_Tables, NHS_number = Current_NHS_Number)),
+                                            "", 
+                                        If(
+                                            IsBlank(LookUp(Patient_Tables, NHS_number = Current_NHS_Number).Patient_status_t), 
+                                            "", 
+                                            LookUp(Patient_Tables, NHS_number = Current_NHS_Number).Patient_status_t
+                                        )
+                                        )
+                                    X: =279
+                                    Y: =250
+                                    ZIndex: =27
+
+                            Container32_2 As groupContainer.manualLayoutContainer:
+                                AlignInContainer: =AlignInContainer.SetByContainer
+                                Height: =Container30_2.Height
+                                LayoutMinHeight: =0
+                                LayoutMinWidth: =800
+                                Width: =App.ActiveScreen.Width
+                                ZIndex: =2
+
+                                Label16_5 As label:
+                                    Align: =Align.Center
+                                    Fill: =RGBA(219, 219, 219, 1)
+                                    FontWeight: =FontWeight.Bold
+                                    Height: =47
+                                    Size: =If(App.ActiveScreen.Size>1,20,13)
+                                    Text: ="Bed Information"
+                                    Width: =286
+                                    X: |
+                                        =Label17_17.X+Label17_17.Width/2-10
+                                    Y: =40
+                                    ZIndex: =1
+
+                                Label17_19 As label:
+                                    Align: =Align.Right
+                                    FontWeight: =FontWeight.Bold
+                                    Size: =If(App.ActiveScreen.Width<420,10,16)
+                                    Text: |-
+                                        ="Number:"
+                                    Width: =200
+                                    X: =76
+                                    Y: |-
+                                        =Label17_18.Y
+                                        +40+2
+                                    ZIndex: =3
+
+                                Label18_6 As label:
+                                    Align: =Align.Right
+                                    FontWeight: =FontWeight.Bold
+                                    Size: =If(App.ActiveScreen.Width<420,10,16)
+                                    Text: |-
+                                        ="Admit Date:"
+                                    Width: =200
+                                    X: =76
+                                    Y: =Label17_19.Y+40+4
+                                    ZIndex: =5
+
+                                Label17_17 As label:
+                                    Align: =Align.Right
+                                    FontWeight: =FontWeight.Bold
+                                    Size: =If(App.ActiveScreen.Width<420,10,16)
+                                    Text: |-
+                                        ="Ward:"
+                                    Width: =200
+                                    X: =76
+                                    Y: =140
+                                    ZIndex: =10
+
+                                Label17_18 As label:
+                                    Align: =Align.Right
+                                    FontWeight: =FontWeight.Bold
+                                    Size: =If(App.ActiveScreen.Width<420,10,16)
+                                    Text: |-
+                                        ="Bay:"
+                                    Width: =200
+                                    X: =76
+                                    Y: =Label17_17.Y+40+2
+                                    ZIndex: =11
+
+                                Label18_8 As label:
+                                    Align: =Align.Right
+                                    FontWeight: =FontWeight.Bold
+                                    Height: =77
+                                    Size: =If(App.ActiveScreen.Width<420,10,16)
+                                    Text: |-
+                                        ="Expected Discharge Date:"
+                                    Width: =200
+                                    X: =76
+                                    Y: =Label18_9.Y+40+4
+                                    ZIndex: =13
+
+                                Label19_19 As label:
+                                    Size: =If(App.ActiveScreen.Size>1,16,12)
+                                    Text: =LookUp(Admit_Tables, AdmitBedID = Selected_Bed_ID, Admission_Time)
+                                    Width: =277
+                                    X: =278
+                                    Y: =Label18_6.Y
+                                    ZIndex: =17
+
+                                Button3 As button:
+                                    BorderThickness: =0
+                                    Color: =RGBA(0, 0, 0, 1)
+                                    Fill: =RGBA(187, 221, 140, 1)
+                                    OnSelect: |-
+                                        =UpdateContext({IsTransferring: true})
+                                    Text: ="Transfer"
+                                    Visible: =!IsTransferring
+                                    X: =313
+                                    Y: |
+                                        =Button3_transfer_2.Y
+                                    ZIndex: =21
+
+                                bedpopup_ward As dropdown:
+                                    Default: |-
+                                        =If(
+                                            IsBlank(LookUp(Bed_Tables, Bed_ID = Selected_Bed_ID).Ward_Name), 
+                                            "", 
+                                            LookUp(Bed_Tables, Bed_ID = Selected_Bed_ID).Ward_Name
+                                        )
+                                    DisplayMode: =If(IsTransferring, DisplayMode.Edit, DisplayMode.View)
+                                    Items: =["","Gynocology","Intensive Care","Pediatric","Neonatal ICU","Oncology","General Surgical","Check air tag","Emergency","Side","Orthopedic","Maternity"]
+                                    Width: =172
+                                    X: =278
+                                    Y: =Label17_17.Y
+                                    ZIndex: =22
+
+                                bedpopup_bay As text:
+                                    Default: |-
+                                        =If(
+                                            IsBlank(LookUp(Bed_Tables, Bed_ID = Selected_Bed_ID).Bay), 
+                                            "", 
+                                            LookUp(Bed_Tables, Bed_ID = Selected_Bed_ID).Bay
+                                        )
+                                    DisplayMode: =If(IsTransferring, DisplayMode.Edit, DisplayMode.View)
+                                    Width: =172
+                                    X: =278
+                                    Y: =Label17_18.Y
+                                    ZIndex: =23
+
+                                bedpopup_number As text:
+                                    Default: |-
+                                        =If(
+                                            IsBlank(LookUp(Bed_Tables, Bed_ID = Selected_Bed_ID).Bed_Number), 
+                                            "", 
+                                            LookUp(Bed_Tables, Bed_ID = Selected_Bed_ID).Bed_Number
+                                        )
+                                    DisplayMode: =If(IsTransferring, DisplayMode.Edit, DisplayMode.View)
+                                    Width: =172
+                                    X: =278
+                                    Y: =Label17_19.Y
+                                    ZIndex: =24
+
+                                Label14 As label:
+                                    Height: =Label18_8.Height
+                                    Text: =LookUp(Discharge_List_Tables, Bed_ID_discharge = Selected_Bed_ID, Expected_Discharge_Start_Time)
+                                    Width: =328
+                                    X: =278
+                                    Y: =Label18_8.Y
+                                    ZIndex: =26
+
+                                trans_save As button:
+                                    BorderThickness: =0
+                                    Color: =RGBA(0, 0, 0, 1)
+                                    Fill: =RGBA(187, 221, 140, 1)
+                                    OnSelect: |
+                                        =If(
+                                            IsTransferring,
+                                            Set(Destination_Bed_ID, Switch(
+                                                bedpopup_ward.Selected.Value,
+                                                "Emergency", "EMER",
+                                                "General Surgical", "GS",
+                                                "Gynocology","GYN",
+                                                "Intensive Care","IC",
+                                                "Pediatric","PED",
+                                                "Neonatal ICU","NEICU",
+                                                "Oncology","ONC",
+                                                "Check air tag","CAT",
+                                                "Side","SIDE",
+                                                "Orthopedic","ORTH",
+                                                "Maternity","MATER"
+                                            ) & "-" & bedpopup_bay.Text & "-" & bedpopup_number.Text);
+                                            If(
+                                                !IsBlank(
+                                                    LookUp(
+                                                        Bed_Tables,
+                                                        Bed_ID = Destination_Bed_ID && Bed_Status_t = "Available"
+                                                    )
+                                                ),
+                                                Patch(
+                                                    Transfer_List_Tables,
+                                                    Defaults(Transfer_List_Tables),
+                                                    {
+                                                        Bed_ID_transfer: Selected_Bed_ID,
+                                                        NHS_number_transfer: Current_NHS_Number,
+                                                        Destination_Bed_ID: Destination_Bed_ID,
+                                                        Destination_Bay:bedpopup_bay.Text,
+                                                        Destination_Bed_Number:bedpopup_number.Text,
+                                                        Destination_Ward_Name:bedpopup_ward.SelectedText.Value,
+                                                        Transfer_Date: Now(),
+                                                        Transfer_Time: Now(),
+                                                        Porter_transfer: bedpopup_porter.Selected.Value
+                                                    }
+                                                );
+                                                Patch(
+                                                    Bed_Tables,
+                                                    LookUp(Bed_Tables, Bed_ID = Selected_Bed_ID),
+                                                    { NHS_number_current: Blank(), Bed_Status_t: "Available" }
+                                                );
+                                                Patch(
+                                                    Bed_Tables,
+                                                    LookUp(Bed_Tables, Bed_ID = Destination_Bed_ID),
+                                                    { NHS_number_current: Current_NHS_Number, Bed_Status_t: "Admitted" }
+                                                );
+                                        
+                                                // Patch the Admit_Bed_ID in Admit_Table
+                                                Patch(
+                                                    Admit_Tables,
+                                                    LookUp(Admit_Tables, NHS_number_Admit = Current_NHS_Number),
+                                                    { Admit_Bed_ID: Destination_Bed_ID }
+                                                );
+                                        
+                                                Notify("Bed transfer recorded successfully.", NotificationType.Success);
+                                                UpdateContext({IsTransferring: false}),
+                                                Notify("The entered ward, bay, bed number, or destination bed ID does not exist or the bed status is not 'Available'.", NotificationType.Error)
+                                            )
+                                        )
+                                    Text: ="Save"
+                                    Visible: =IsTransferring
+                                    X: =196
+                                    Y: =467
+                                    ZIndex: =27
+
+                                Button3_1 As button:
+                                    BorderThickness: =0
+                                    Color: =RGBA(0, 0, 0, 1)
+                                    Fill: =RGBA(219, 219, 219, 1)
+                                    OnSelect: |-
+                                        =UpdateContext({IsTransferring: false})
+                                    Text: ="Cancel"
+                                    Visible: =IsTransferring
+                                    X: =438
+                                    Y: =467
+                                    ZIndex: =28
+
+                                Label18_9 As label:
+                                    Align: =Align.Right
+                                    FontWeight: =FontWeight.Bold
+                                    Size: =If(App.ActiveScreen.Width<420,10,16)
+                                    Text: |-
+                                        ="Porter:"
+                                    Width: =200
+                                    X: =76
+                                    Y: =Label18_6.Y+40+4
+                                    ZIndex: =29
+
+                                bedpopup_porter As dropdown:
+                                    Default: |-
+                                        =If(
+                                            IsBlank(LookUp(Bed_Tables, Bed_ID = Selected_Bed_ID).Ward_Name), 
+                                            "", 
+                                            LookUp(Bed_Tables, Bed_ID = Selected_Bed_ID).Ward_Name
+                                        )
+                                    DisplayMode: =If(IsTransferring, DisplayMode.Edit, DisplayMode.View)
+                                    Items: =["No","Yes"]
+                                    Width: =142
+                                    X: =280
+                                    Y: =Label18_9.Y
+                                    ZIndex: =30
+

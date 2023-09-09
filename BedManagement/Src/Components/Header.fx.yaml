@@ -1,0 +1,107 @@
+Header As CanvasComponent:
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: |
+        =75
+    HomeScreen: =App.ActiveScreen
+    ScreenSizeInput: =100
+    Visible: =true
+    Width: |+
+        =1480
+        
+        
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    HeaderContainer2_3 As groupContainer.horizontalAutoLayoutContainer:
+        Fill: =RGBA(56, 96, 178, 1)
+        Height: =Parent.Height
+        LayoutAlignItems: =LayoutAlignItems.Center
+        LayoutMode: =LayoutMode.Auto
+        PaddingLeft: =4
+        PaddingRight: =4
+        Width: =Parent.Width
+        ZIndex: =4
+
+        AppName As label:
+            Align: =Align.Center
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(255, 255, 0, 1)
+            DisabledColor: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(56, 96, 178, 1)
+            FillPortions: =1
+            FontWeight: =FontWeight.Bold
+            LayoutMinWidth: =180
+            Size: |-
+                =If(HeaderContainer2_3.Width < 500, 8, 
+                    If(HeaderContainer2_3.Width < 1000, 12, 
+                        If(HeaderContainer2_3.Width < 1600, 16)
+                    )
+                )
+            Text: ="MICROSOFT x NHS BED MANAGEMENT SYSTEM"
+            X: =45
+            Y: =18
+            ZIndex: =1
+
+        Label10 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(255, 255, 255, 1)
+            FillPortions: =1
+            LayoutMinWidth: =80
+            Size: |-
+                =//13
+                If(App.Width<500,10,13)
+            Text: =App.ActiveScreen.Name
+            ZIndex: =2
+
+        Icon2_6 As icon.Home:
+            BorderColor: =RGBA(56, 96, 178, 1)
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(56, 96, 178, 1)
+            Height: =If(App.Width<500,44,64)
+            Icon: =Icon.Home
+            OnSelect: =Navigate(Header.HomeScreen)
+            PaddingLeft: |
+                =8
+            PaddingRight: |+
+                =8
+                
+            Width: =If(App.Width<500,44,64)
+            X: =1120
+            Y: =5
+            ZIndex: =3
+
+        Icon6 As icon.Leave:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =If(App.Width<500,24,45)
+            Icon: =Icon.Leave
+            OnSelect: =Exit()
+            Width: =If(App.Width<500,24,45)
+            ZIndex: =5
+
+        UserName As label:
+            Align: =Align.Center
+            AutoHeight: =true
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(255, 0, 0, 1)
+            Fill: =RGBA(56, 96, 178, 1)
+            FontWeight: =FontWeight.Semibold
+            LayoutMinWidth: =100
+            Overflow: =Overflow.Scroll
+            Text: ="Welcome, " & User().FullName
+            Visible: =Header.Width>500
+            Width: =220
+            ZIndex: =6
+
+        Image5 As image:
+            Height: =If(App.Width<500,If(App.Width<400,35,45),65)
+            Image: =User().Image
+            RadiusBottomLeft: =40
+            RadiusBottomRight: =40
+            RadiusTopLeft: =40
+            RadiusTopRight: =40
+            Width: =If(App.Width<500,If(App.Width<400,35,45),65)
+            ZIndex: =7
+

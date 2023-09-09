@@ -1,0 +1,402 @@
+"Admission As screen.'tabletAutoLayout_HeaderMainFooter_ver1.0'":
+
+    ScreenContainer1_3 As groupContainer.verticalAutoLayoutContainer:
+        Height: =Parent.Height
+        LayoutAlignItems: =LayoutAlignItems.Stretch
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutMode: =LayoutMode.Auto
+        Width: =Parent.Width
+        ZIndex: =1
+
+        HeaderContainer2_14 As groupContainer.horizontalAutoLayoutContainer:
+            Fill: =RGBA(56, 96, 178, 1)
+            FillPortions: =0
+            Height: =75
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            PaddingLeft: |
+                =1
+            ZIndex: =1
+
+            Header_Admits_6 As Header_1:
+                HomeScreen: =Dashboard
+                LayoutMinHeight: =640
+                LayoutMinWidth: =640
+                ScreenSizeInput: =Admits.Size
+                Width: |+
+                    =Parent.Width
+                    
+
+        MainSectionContainer2_14 As groupContainer.verticalAutoLayoutContainer:
+            Height: =Admission.Height-ScreenContainer1_3.Height
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            LayoutOverflowX: =LayoutOverflow.Scroll
+            LayoutOverflowY: =LayoutOverflow.Scroll
+            PaddingTop: |
+                =1
+            Visible: =Admits.Size<>600
+            ZIndex: =2
+
+            Container10_6 As groupContainer.horizontalAutoLayoutContainer:
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                LayoutOverflowX: =LayoutOverflow.Scroll
+                Width: |
+                    =500
+                ZIndex: =1
+
+                Container20_9 As groupContainer.horizontalAutoLayoutContainer:
+                    LayoutAlignItems: =LayoutAlignItems.Stretch
+                    LayoutDirection: =LayoutDirection.Vertical
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    LayoutOverflowY: =LayoutOverflow.Scroll
+                    ZIndex: =4
+
+                    Container21_4 As groupContainer.horizontalAutoLayoutContainer:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        FillPortions: =3
+                        Height: =Parent.Height
+                        LayoutMinHeight: =100
+                        LayoutMinWidth: =250
+                        LayoutMode: =LayoutMode.Auto
+                        Width: =Parent.Width
+                        ZIndex: =1
+
+                        Container24_4 As groupContainer.horizontalAutoLayoutContainer:
+                            Height: =100
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =500
+                            LayoutMode: =LayoutMode.Auto
+                            LayoutOverflowX: =LayoutOverflow.Scroll
+                            LayoutOverflowY: =LayoutOverflow.Scroll
+                            LayoutWrap: =true
+                            Width: |+
+                                =Parent.Width/2
+                                
+                            ZIndex: =2
+
+                            Container30_3 As groupContainer.manualLayoutContainer:
+                                AlignInContainer: =AlignInContainer.Start
+                                Height: =Parent.Height
+                                LayoutMinHeight: =100
+                                LayoutMinWidth: =550
+                                Width: |
+                                    =Parent.Width/2
+                                ZIndex: =1
+
+                                Label16_6 As label:
+                                    Align: =Align.Center
+                                    Fill: =RGBA(219, 219, 219, 1)
+                                    FontWeight: =FontWeight.Bold
+                                    Height: =47
+                                    Size: =17
+                                    Text: ="Patient Information"
+                                    Width: =286
+                                    X: =178
+                                    Y: =92
+                                    ZIndex: =1
+
+                                Group7_3 As group:
+                                    Height: =5
+                                    Width: =5
+                                    X: =40
+                                    Y: =40
+                                    ZIndex: =4
+
+                                    nhs_no_admit_1 As text:
+                                        Default: =selectedNHSNumber
+                                        HintText: ="Text Input"
+                                        Width: =211
+                                        X: =Label17_24.X+5+12+183
+                                        Y: =176
+                                        ZIndex: =2
+
+                                    Label17_24 As label:
+                                        FontWeight: =FontWeight.Bold
+                                        Text: |-
+                                            ="Enter NHS Number:"
+                                        Width: =183
+                                        X: =If(App.ActiveScreen.Size<2,60,115)
+                                        Y: =176
+                                        ZIndex: =3
+
+                                Label17_27 As label:
+                                    FontWeight: =FontWeight.Bold
+                                    Text: |-
+                                        ="Enter Date of Birth:"
+                                    Width: =183
+                                    X: =If(App.ActiveScreen.Size<2,60,115)
+                                    Y: =240
+                                    ZIndex: =5
+
+                                dob_admit_1 As datepicker:
+                                    DefaultDate: =LookUp(Patient_Tables, NHS_number = selectedNHSNumber).DOB
+                                    Width: =238
+                                    X: =315
+                                    Y: =240
+                                    ZIndex: =6
+
+                            Container32_3 As groupContainer.manualLayoutContainer:
+                                FillPortions: =0
+                                Height: =Container30_3.Height
+                                LayoutMinHeight: =600
+                                LayoutMinWidth: =700
+                                Width: =If(App.Width<450,550,If(App.Width<1336,App.Width,App.Width/2))
+                                ZIndex: =2
+
+                                Label16_7 As label:
+                                    Align: =Align.Center
+                                    Fill: =RGBA(219, 219, 219, 1)
+                                    FontWeight: =FontWeight.Bold
+                                    Height: =47
+                                    Size: =17
+                                    Text: ="Bed Information"
+                                    Width: =286
+                                    X: =168
+                                    Y: =91
+                                    ZIndex: =1
+
+                                Button2_1 As button:
+                                    BorderThickness: =0
+                                    Color: =RGBA(0, 0, 0, 1)
+                                    Fill: =RGBA(213, 242, 199, 1)
+                                    Height: =37
+                                    OnSelect: |
+                                        =Set(varDropdownDefault, "Available");
+                                        Navigate(AvailableBed_forwaiting)
+                                    Text: ="View All Available"
+                                    Width: =216
+                                    X: =203
+                                    Y: =170
+                                    ZIndex: =2
+
+                                Label18_2 As label:
+                                    Align: =Align.Right
+                                    FontWeight: =FontWeight.Bold
+                                    Text: |-
+                                        ="Admit Date:"
+                                    X: =81
+                                    Y: =306
+                                    ZIndex: =5
+
+                                Group7_5 As group:
+                                    Height: =5
+                                    Width: =5
+                                    X: =-82
+                                    Y: =-136
+                                    ZIndex: =5
+
+                                    Label17_28 As label:
+                                        Align: =Align.Center
+                                        FontWeight: =FontWeight.Bold
+                                        Text: |-
+                                            ="Enter Bed ID:"
+                                        Width: =172
+                                        X: =81
+                                        Y: =240
+                                        ZIndex: =3
+
+                                    bed_id_admit_1 As text:
+                                        Default: =SelectedBedwaiting.Bed_ID
+                                        HintText: ="Text input"
+                                        Width: =211
+                                        X: =260
+                                        Y: =240
+                                        ZIndex: =4
+
+                                admit_date_timepicker_2 As datepicker:
+                                    Width: =247
+                                    X: =260
+                                    Y: =306
+                                    ZIndex: =6
+
+                                admit_time_hour_2 As dropdown:
+                                    Height: =35
+                                    Items: =["01","02","03","04","05","06","07","08","09","10","11","12"]
+                                    Width: =70
+                                    X: =260
+                                    Y: =367
+                                    ZIndex: =7
+
+                                admit_time_minute_2 As dropdown:
+                                    Height: =35
+                                    Items: =["00","30"]
+                                    Width: =70
+                                    X: =336
+                                    Y: =367
+                                    ZIndex: =8
+
+                                Label18_5 As label:
+                                    Align: =Align.Right
+                                    FontWeight: =FontWeight.Bold
+                                    Text: |-
+                                        ="Admit Time:"
+                                    X: =85
+                                    Y: =367
+                                    ZIndex: =9
+
+                                admit_time_ampm_2 As dropdown:
+                                    Height: =35
+                                    Items: =["AM","PM"]
+                                    Width: =80
+                                    X: =412
+                                    Y: =367
+                                    ZIndex: =10
+
+                                Group7_4 As group:
+                                    Height: =5
+                                    Width: =5
+                                    X: =-41
+                                    Y: =-200
+                                    ZIndex: =13
+
+                                    Label17_29 As label:
+                                        Align: =Align.Center
+                                        FontWeight: =FontWeight.Bold
+                                        Text: |-
+                                            ="Admit Reason:"
+                                        Width: =172
+                                        X: =81
+                                        Y: =430
+                                        ZIndex: =11
+
+                                    bed_reason_admin_1 As text:
+                                        Default: =""
+                                        HintText: ="Text input"
+                                        Width: =211
+                                        X: =260
+                                        Y: =430
+                                        ZIndex: =12
+
+                    Container33_2 As groupContainer.verticalAutoLayoutContainer:
+                        FillPortions: =0
+                        Height: =160
+                        LayoutAlignItems: =LayoutAlignItems.Center
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutMinHeight: =100
+                        LayoutMinWidth: =250
+                        LayoutMode: =LayoutMode.Auto
+                        LayoutOverflowX: =LayoutOverflow.Scroll
+                        LayoutOverflowY: =LayoutOverflow.Scroll
+                        Width: =Container20_9.Width
+                        ZIndex: =2
+
+                        Container34_2 As groupContainer.manualLayoutContainer:
+                            AlignInContainer: =AlignInContainer.Start
+                            FillPortions: =0
+                            LayoutMinHeight: =120
+                            LayoutMinWidth: =250
+                            Width: =1600
+                            ZIndex: =3
+
+                            Button4_cancel_2 As button:
+                                BorderThickness: =0
+                                Color: =RGBA(0, 0, 0, 1)
+                                Fill: =RGBA(236, 236, 236, 1)
+                                Height: =38
+                                OnSelect: =Navigate('Waiting List')
+                                Text: ="Cancel"
+                                Width: =106
+                                X: =Button3_save_2.X+20+106
+                                Y: =40
+                                ZIndex: =1
+
+                            Button3_save_2 As button:
+                                BorderThickness: =0
+                                Color: =RGBA(0, 0, 0, 1)
+                                Fill: =RGBA(255, 210, 51, 1)
+                                Height: =38
+                                OnSelect: |
+                                    =Set(varCurrentBedStatus, LookUp(Bed_Tables, Bed_ID = bed_id_admit_1.Text));
+                                    Set(varPatientWithNHS, LookUp(Patient_Tables, NHS_number = nhs_no_admit_1.Text));
+                                    
+                                    If(!(varPatientWithNHS.Patient_status_t in ["", "Waiting Bed"]),
+                                        Set(varPatientAdmittedOrWaiting, varPatientWithNHS),
+                                        Set(varPatientAdmittedOrWaiting, Blank())
+                                    );
+                                    
+                                    If(IsBlank(nhs_no_admit_1.Text), Notify("NHS number is blank!", NotificationType.Warning), false);
+                                    If(IsBlank(dob_admit_1.SelectedDate), Notify("Date of birth is not selected!", NotificationType.Warning), false);
+                                    If(IsBlank(bed_id_admit_1.Text), Notify("Bed ID is blank!", NotificationType.Warning), false);
+                                    If(IsBlank(admit_date_timepicker_2.SelectedDate), Notify("Admission date is not selected!", NotificationType.Warning), false);
+                                    If(IsBlank(varPatientWithNHS), Notify("NHS number not found!", NotificationType.Warning), false);
+                                    If(!IsBlank(varPatientAdmittedOrWaiting), Notify("The patient's status is already admitted!", NotificationType.Warning), false);
+                                    If(varCurrentBedStatus.Bed_Status_t = "Admitted", Notify("The bed is already admitted!", NotificationType.Warning), false);
+                                    If(IsBlank(LookUp(Bed_Tables, Bed_ID = bed_id_admit_1.Text)), Notify("Cannot find the bed with the provided Bed ID!", NotificationType.Warning), false);
+                                    
+                                    If(
+                                        IsBlank(varPatientAdmittedOrWaiting) && varCurrentBedStatus.Bed_Status_t <> "Admitted",
+                                        Set(
+                                        varNewAdmitRecord,
+                                        Patch(
+                                            Admit_Tables,
+                                            Defaults(Admit_Tables),
+                                            {
+                                                NHS_number_Admit: nhs_no_admit_1.Text,
+                                                Admit_Bed_ID: bed_id_admit_1.Text,
+                                                Admission_Date: admit_date_timepicker_2.SelectedDate,
+                                                Admission_Time: DateTimeValue(Text(admit_date_timepicker_2.SelectedDate, "[$-en-US]yyyy-mm-dd") & " " & Text(admit_time_hour_2.Selected.Value & ":" & admit_time_minute_2.Selected.Value & ":00")),
+                                                Admission_Reason: bed_reason_admin_1.Text
+                                            }
+                                        )
+                                    )
+                                    ;
+                                    
+                                        If(
+                                            IsEmpty(Errors(Admit_Tables, varNewAdmitRecord)),
+                                            Set(
+                                                varPatchResult1,
+                                                Patch(
+                                                    Bed_Tables,
+                                                    LookUp(Bed_Tables, Bed_ID = varNewAdmitRecord.Admit_Bed_ID),
+                                                    {
+                                                        NHS_number_current: varNewAdmitRecord.NHS_number_Admit,
+                                                        Bed_Status_t: "Admitted"
+                                                    }
+                                                )
+                                            ),
+                                            Notify("Error updating Bed_Tables: " & First(Errors(Admit_Tables, varNewAdmitRecord)).Message, NotificationType.Error)
+                                        );
+                                    
+                                        If(
+                                            IsEmpty(Errors(Bed_Tables, varPatchResult1)),
+                                            Set(
+                                                varPatchResult2,
+                                                Patch(
+                                                    Patient_Tables,
+                                                    LookUp(Patient_Tables, NHS_number = varNewAdmitRecord.NHS_number_Admit),
+                                                    {Patient_status_t: "Ready to Admit"} 
+                                                )
+                                            ),
+                                            Notify("Error updating Patient_Tables: " & First(Errors(Bed_Tables, varPatchResult1)).Message, NotificationType.Error)
+                                        );
+                                    
+                                        If(
+                                            IsEmpty(Errors(Patient_Tables, varPatchResult2)),
+                                            Notify("Success!", NotificationType.Success),
+                                            Notify("Error updating Patient_Tables: " & First(Errors(Patient_Tables, varPatchResult2)).Message, NotificationType.Error)
+                                        )
+                                    );
+                                    
+                                    Set(varRecordToDelete, LookUp(Waiting_List_Tables, NHS_number_waiting = nhs_no_admit_1.Text));
+                                    If(!IsBlank(varRecordToDelete), Remove(Waiting_List_Tables, varRecordToDelete));
+                                    
+                                    Reset(nhs_no_admit_1);
+                                    Reset(dob_admit_1);
+                                    Reset(bed_id_admit_1);
+                                    Reset(admit_date_timepicker_2);
+                                    Reset(bed_reason_admin_1);
+                                Text: ="Save"
+                                Width: =106
+                                X: =Container34_2.X+Container20_9.Width/2-106-106/2
+                                Y: =40
+                                ZIndex: =2
+

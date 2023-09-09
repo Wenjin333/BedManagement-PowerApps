@@ -1,0 +1,90 @@
+LeftNav_2 As CanvasComponent:
+    Fill: =RGBA(237, 237, 237, 1)
+    Height: =Max(App.Height, App.DesignHeight)
+    MenuWidth: =If(varOpenMenu, Max(App.Width, App.DesignWidth)/6, 68)
+    NavItem: |+
+        =Table({Title: "Bed List", Screen: 'Bed List', Image:"https://cdn0.iconfinder.com/data/icons/covid-19-14/64/Bed_hospital_medical_patient_icon-512.png"}, {Title: "Patient List", Screen: 'Patient List', Image:"https://cdn3.iconfinder.com/data/icons/virus-transmission-line/48/Patient-512.png"}, {Title: "Admits", Screen: Admits, Image:"https://cdn2.iconfinder.com/data/icons/coronavirus-or-covid-19/64/Artboard_15-512.png"}, {Title: "Transfers", Screen: App.ActiveScreen, Image:"https://cdn0.iconfinder.com/data/icons/data-transfer-14/512/N_T_1273Artboard_1_copy_2-512.png"},{Title: "Discharges", Screen: App.ActiveScreen, Image:"https://cdn3.iconfinder.com/data/icons/basic-user-interface-5/64/Door_enter_entrance_exit_leave_logout_out_quit-512.png"}, {Title: "Waiting List", Screen: App.ActiveScreen, Image:"https://cdn2.iconfinder.com/data/icons/coronavirus-covid19-1/49/30-512.png"}, {Title: "Clean request List", Screen: App.ActiveScreen, Image:"https://cdn2.iconfinder.com/data/icons/brush-set-free/512/broom_stick_3-512.png"})
+        
+    Width: =LeftNav_2.MenuWidth
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    hamburgerIcon_1 As icon.ToolsWrench:
+        Height: =62
+        Icon: =Icon.Hamburger
+        OnSelect: =Set(varOpenMenu, !varOpenMenu)
+        PaddingLeft: =7.5
+        PaddingRight: =7.5
+        Width: =62
+        ZIndex: =1
+
+    "galNav_1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+        DelayItemLoading: =true
+        Height: |
+            =Parent.Height-hamburgerIcon_1.Height
+        Items: =LeftNav_2.NavItem
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplatePadding: =0
+        TemplateSize: |
+            =80
+        Width: =Parent.Width
+        Y: =hamburgerIcon_1.Y+hamburgerIcon_1.Height
+        ZIndex: =2
+
+        Rec_1 As rectangle:
+            Height: |
+                =60
+            OnSelect: =Select(NavIcon_1)
+            Width: =8
+            X: =8
+            Y: |
+                =10
+            ZIndex: =7
+
+        NavIcon_1 As icon.Globe:
+            AutoDisableOnSelect: =false
+            Height: =Parent.TemplateHeight
+            HoverBorderColor: =ColorFade(Self.BorderColor, 50%)
+            HoverColor: =RGBA(0, 18, 107, 1)
+            HoverFill: =ColorFade(Self.Color, 80%)
+            Icon: =ThisItem.Image
+            OnSelect: =Navigate(ThisItem.Screen)
+            PaddingBottom: =8
+            PaddingLeft: =8
+            PaddingRight: =8
+            PaddingTop: =8
+            Visible: =false
+            Width: =40
+            X: |
+                =20
+            Y: |
+                =0
+            ZIndex: =8
+
+        NavTitle_1 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            Height: =Parent.TemplateHeight
+            HoverColor: =RGBA(0, 18, 107, 1)
+            HoverFill: =ColorFade(Self.Color,80%)
+            OnSelect: =Select(NavIcon_1)
+            PaddingLeft: =52
+            Size: =14
+            Text: =ThisItem.Title
+            Width: =68
+            Y: |+
+                =0
+                
+                
+            ZIndex: =9
+
+        Image16_1 As image:
+            Height: =40
+            Image: =ThisItem.Image
+            OnSelect: =Navigate(ThisItem.Screen)
+            Width: =40
+            X: =18
+            Y: =20
+            ZIndex: =10
+

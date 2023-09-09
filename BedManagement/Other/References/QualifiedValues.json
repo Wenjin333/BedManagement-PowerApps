@@ -1,0 +1,179 @@
+{
+  "QualifiedValues": [
+    {
+      "Kind": "default.cds_cr7c7_a_forms",
+      "Namespace": "Patient_Tables (Forms)",
+      "Values": {
+        "Information": "be5b20f1-ffa0-4d5e-9bd1-92f5cd8a36b5"
+      }
+    },
+    {
+      "Kind": "default.cds_cr7c7_bed_table_forms",
+      "Namespace": "Bed_Tables (Forms)",
+      "Values": {
+        "Information": "f68bf497-8c97-4852-a613-78392d4b0206"
+      }
+    },
+    {
+      "Kind": "default.cds_cr7c7_waiting_list_table_forms",
+      "Namespace": "Waiting_List_Tables (Forms)",
+      "Values": {
+        "Information": "d12493b8-e49f-4cab-b93d-ebe107717d4f"
+      }
+    },
+    {
+      "Kind": "Default-aea48856-3e55-45be-ba30-15334fd23af9_cr7c7_admit_table_forms",
+      "Namespace": "Admit_Tables (Forms)",
+      "Values": {
+        "Information": "3b50de8b-0d56-4d89-87c7-45e162bd1373"
+      }
+    },
+    {
+      "Kind": "default.cds_cr7c7_request_cleaning_list_table_forms",
+      "Namespace": "Request_Cleaning_List_Tables (Forms)",
+      "Values": {
+        "Information": "271d4224-9bcb-4867-8960-f0a58422dd4e"
+      }
+    },
+    {
+      "Kind": "Default-aea48856-3e55-45be-ba30-15334fd23af9_cr7c7_discharge_list_table_forms",
+      "Namespace": "Discharge_List_Tables (Forms)",
+      "Values": {
+        "Information": "c8423d14-d3d0-4ba9-9d05-b295e38f693a"
+      }
+    },
+    {
+      "Kind": "default.cds_cr7c7_transfer_list_table_forms",
+      "Namespace": "Transfer_List_Tables (Forms)",
+      "Values": {
+        "Information": "6b1ca881-bef4-4325-ba5b-af9a7097011f"
+      }
+    },
+    {
+      "Kind": "default.cds_cr7c7_a_forms",
+      "Namespace": "Patient_Tables (表單)",
+      "Values": {
+        "Information": "be5b20f1-ffa0-4d5e-9bd1-92f5cd8a36b5"
+      }
+    },
+    {
+      "Kind": "default.cds_cr7c7_bed_table_forms",
+      "Namespace": "Bed_Tables (表單)",
+      "Values": {
+        "Information": "f68bf497-8c97-4852-a613-78392d4b0206"
+      }
+    },
+    {
+      "Kind": "default.cds_cr7c7_waiting_list_table_forms",
+      "Namespace": "Waiting_List_Tables (表單)",
+      "Values": {
+        "Information": "d12493b8-e49f-4cab-b93d-ebe107717d4f"
+      }
+    },
+    {
+      "Kind": "Default-aea48856-3e55-45be-ba30-15334fd23af9_cr7c7_admit_table_forms",
+      "Namespace": "Admit_Tables (表單)",
+      "Values": {
+        "Information": "3b50de8b-0d56-4d89-87c7-45e162bd1373"
+      }
+    },
+    {
+      "Kind": "default.cds_cr7c7_request_cleaning_list_table_forms",
+      "Namespace": "Request_Cleaning_List_Tables (表單)",
+      "Values": {
+        "Information": "271d4224-9bcb-4867-8960-f0a58422dd4e"
+      }
+    },
+    {
+      "Kind": "Default-aea48856-3e55-45be-ba30-15334fd23af9_cr7c7_discharge_list_table_forms",
+      "Namespace": "Discharge_List_Tables (表單)",
+      "Values": {
+        "Information": "c8423d14-d3d0-4ba9-9d05-b295e38f693a"
+      }
+    },
+    {
+      "Kind": "default.cds_cr7c7_transfer_list_table_forms",
+      "Namespace": "Transfer_List_Tables (表單)",
+      "Values": {
+        "Information": "6b1ca881-bef4-4325-ba5b-af9a7097011f"
+      }
+    },
+    {
+      "Kind": "6e4b2f10-f3b1-ec34-9864-542b84506808_cr79b_patients_forms",
+      "Namespace": "Patients (Forms)",
+      "Values": {
+        "資訊": "f3304f63-f9a8-4486-b3cc-e9bde5fad2f1"
+      }
+    },
+    {
+      "Kind": "6e4b2f10-f3b1-ec34-9864-542b84506808_cr79b_bed_forms",
+      "Namespace": "Beds (Forms)",
+      "Values": {
+        "資訊": "533d9916-c663-4d29-8261-e899cc7a4b37"
+      }
+    },
+    {
+      "Kind": "6e4b2f10-f3b1-ec34-9864-542b84506808_cr79b_admitlist_forms",
+      "Namespace": "AdmitLists (Forms)",
+      "Values": {
+        "資訊": "65e572ea-473f-45fd-ad98-d97a0c32cb7d"
+      }
+    },
+    {
+      "Kind": "6e4b2f10-f3b1-ec34-9864-542b84506808_cr79b_patients_forms",
+      "Namespace": "Patients (表單)",
+      "Values": {
+        "資訊": "f3304f63-f9a8-4486-b3cc-e9bde5fad2f1"
+      }
+    },
+    {
+      "Kind": "6e4b2f10-f3b1-ec34-9864-542b84506808_cr79b_bed_forms",
+      "Namespace": "Beds (表單)",
+      "Values": {
+        "資訊": "533d9916-c663-4d29-8261-e899cc7a4b37"
+      }
+    },
+    {
+      "Kind": "6e4b2f10-f3b1-ec34-9864-542b84506808_cr79b_admitlist_forms",
+      "Namespace": "AdmitLists (表單)",
+      "Values": {
+        "資訊": "65e572ea-473f-45fd-ad98-d97a0c32cb7d"
+      }
+    },
+    {
+      "Kind": "default.cds_cr7c7_patient_forms",
+      "Namespace": "Patients_1 (Forms)",
+      "Values": {
+        "Information": "1498c782-535b-4e36-b39b-b89945078a66"
+      }
+    },
+    {
+      "Kind": "Default-aea48856-3e55-45be-ba30-15334fd23af9_cr7c7_patient_forms",
+      "Namespace": "PatientAS (Forms)",
+      "Values": {
+        "Information": "1498c782-535b-4e36-b39b-b89945078a66"
+      }
+    },
+    {
+      "Kind": "default.cds_cr7c7_patient_forms",
+      "Namespace": "Patients_1 (表單)",
+      "Values": {
+        "Information": "1498c782-535b-4e36-b39b-b89945078a66"
+      }
+    },
+    {
+      "Kind": "Default-aea48856-3e55-45be-ba30-15334fd23af9_cr7c7_patient_forms",
+      "Namespace": "PatientAS (表單)",
+      "Values": {
+        "Information": "1498c782-535b-4e36-b39b-b89945078a66"
+      }
+    },
+    {
+      "Kind": "Default-aea48856-3e55-45be-ba30-15334fd23af9_cr7c7_a_forms",
+      "Namespace": "Patient_Tables_1 (Forms)",
+      "Values": {
+        "Information": "be5b20f1-ffa0-4d5e-9bd1-92f5cd8a36b5"
+      }
+    }
+  ]
+}

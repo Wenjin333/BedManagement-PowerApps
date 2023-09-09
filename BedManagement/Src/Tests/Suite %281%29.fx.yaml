@@ -1,0 +1,13 @@
+"'48b76238-f32a-4da9-9ed7-58e8235e5001' As TestSuite":
+    Description: ="filter"
+    DisplayName: ="Suite (1)"
+
+    "'c6e27bce-5387-4684-a4a7-92d7269d222c' As TestCase":
+        Description: ="filter"
+        DisplayName: ="Case"
+
+        Step1 As TestStep:
+            Description: ="Select 'clearallfilter_1'"
+            Screen: =Bed List
+            Value: =Select(clearallfilter_1)
+

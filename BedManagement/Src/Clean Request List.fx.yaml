@@ -1,0 +1,388 @@
+"'Clean Request List' As screen.'tabletAutoLayout_HeaderMainFooter_ver1.0'":
+
+    ScreenContainer2_7 As groupContainer.verticalAutoLayoutContainer:
+        Height: =Parent.Height
+        LayoutAlignItems: =LayoutAlignItems.Stretch
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutMode: =LayoutMode.Auto
+        Width: =Parent.Width
+        ZIndex: =1
+
+        HeaderContainer2_10 As groupContainer.horizontalAutoLayoutContainer:
+            Fill: =RGBA(56, 96, 178, 1)
+            FillPortions: =0
+            Height: =75
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            PaddingLeft: |
+                =1
+            Width: =Parent.Width
+            ZIndex: =1
+
+            Header_bedList_2 As Header:
+                HomeScreen: =Dashboard
+                LayoutMinHeight: =640
+                LayoutMinWidth: =640
+                ScreenSizeInput: ='Clean Request List'.Size
+                Width: |+
+                    =Parent.Width
+                    
+
+        MainSectionContainer2_9 As groupContainer.verticalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMinHeight: =100
+            LayoutMinWidth: =80
+            LayoutMode: =LayoutMode.Auto
+            PaddingTop: |
+                =1
+            Visible: ='Clean Request List'.Size<>600
+            ZIndex: =3
+
+            Container6_5 As groupContainer.horizontalAutoLayoutContainer:
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                ZIndex: =1
+
+                Container6_8 As groupContainer.horizontalAutoLayoutContainer:
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    ZIndex: =1
+
+                    LeftNavBed_2 As LeftNav:
+                        LayoutMinHeight: =640
+                        LayoutMinWidth: =640
+                        NavItem: |+
+                            =Table({Title: "Bed List", Screen: 'Clean Request List', Image:"https://cdn0.iconfinder.com/data/icons/covid-19-14/64/Bed_hospital_medical_patient_icon-512.png"}, {Title: "Patient List", Screen: 'Patient List', Image:"https://cdn3.iconfinder.com/data/icons/virus-transmission-line/48/Patient-512.png"}, {Title: "Admits", Screen: Admits, Image:"https://cdn2.iconfinder.com/data/icons/coronavirus-or-covid-19/64/Artboard_15-512.png"}, {Title: "Transfers", Screen: App.ActiveScreen, Image:"https://cdn0.iconfinder.com/data/icons/data-transfer-14/512/N_T_1273Artboard_1_copy_2-512.png"},{Title: "Discharges", Screen: App.ActiveScreen, Image:"https://cdn3.iconfinder.com/data/icons/basic-user-interface-5/64/Door_enter_entrance_exit_leave_logout_out_quit-512.png"}, {Title: "Waiting List", Screen: 'Waiting List', Image:"https://cdn2.iconfinder.com/data/icons/coronavirus-covid19-1/49/30-512.png"}, {Title: "Clean request List", Screen: App.ActiveScreen, Image:"https://cdn2.iconfinder.com/data/icons/brush-set-free/512/broom_stick_3-512.png"}, {Title: "RFID Code", Screen: 'RFID Code', Image:"https://cdn2.iconfinder.com/data/icons/sale-and-discount/32/Sale_and_Discount-05-512.png"})
+                            
+                        Width: =LeftNavBed_2.MenuWidth
+
+                    Container4_6 As groupContainer.verticalAutoLayoutContainer:
+                        Height: =Parent.Height
+                        LayoutAlignItems: =LayoutAlignItems.Stretch
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutMinHeight: =100
+                        LayoutMinWidth: =250
+                        LayoutMode: =LayoutMode.Auto
+                        Width: =Max(ScreenSize.ExtraLarge,2000)
+                        ZIndex: =2
+
+                        Container1_3 As groupContainer.verticalAutoLayoutContainer:
+                            AlignInContainer: =AlignInContainer.SetByContainer
+                            FillPortions: =0
+                            Height: =80
+                            LayoutAlignItems: =LayoutAlignItems.Center
+                            LayoutGap: =50
+                            LayoutJustifyContent: =LayoutJustifyContent.Center
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =250
+                            LayoutMode: =LayoutMode.Auto
+                            PaddingLeft: =4
+                            PaddingRight: =4
+                            Width: =Parent.Width
+                            ZIndex: =1
+
+                            Accepted_Request As label:
+                                Align: =Align.Center
+                                Fill: =RGBA(255, 236, 170, 1)
+                                Height: =60
+                                Text: |-
+                                    ="Accepted Request: " & CountRows(Filter(Request_Cleaning_List_Tables, Clean_Request = "Accepted"))
+                                ZIndex: =6
+
+                            Pending_Request As label:
+                                Align: =Align.Center
+                                Fill: =RGBA(255, 197, 197, 1)
+                                Height: =60
+                                Text: |-
+                                    ="Pending Request: " & CountRows(Filter(Request_Cleaning_List_Tables, Clean_Request = "Requesting"))
+                                ZIndex: =7
+
+                        Container13_6 As groupContainer.horizontalAutoLayoutContainer:
+                            AlignInContainer: =AlignInContainer.SetByContainer
+                            FillPortions: =0
+                            Height: =60
+                            LayoutAlignItems: =LayoutAlignItems.Center
+                            LayoutGap: =10
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =250
+                            LayoutMode: =LayoutMode.Auto
+                            LayoutOverflowX: =LayoutOverflow.Scroll
+                            LayoutOverflowY: =LayoutOverflow.Scroll
+                            Width: =Parent.Width
+                            ZIndex: =2
+
+                            FilterBy_6 As label:
+                                FontWeight: =FontWeight.Bold
+                                Size: =15
+                                Text: ="Filter by"
+                                Width: =100
+                                ZIndex: =1
+
+                            Rectangle6_6 As rectangle:
+                                Fill: =RGBA(0, 0, 0, 1)
+                                Height: =50
+                                Width: =3
+                                X: |
+                                    =0
+                                ZIndex: =2
+
+                            searchbox_bed_patient_3 As text:
+                                Default: =""
+                                DisabledColor: =RGBA(136, 160, 209, 1)
+                                DisabledFill: =RGBA(255, 255, 255, 1)
+                                HintText: ="🔎 Bed ID"
+                                HoverColor: =RGBA(186, 202, 226, 1)
+                                HoverFill: =RGBA(237, 237, 237, 1)
+                                Width: =200
+                                ZIndex: =3
+
+                            filter_status_4 As label:
+                                Align: =Align.Right
+                                Size: =15
+                                Text: |-
+                                    ="Status: "
+                                Width: =80
+                                ZIndex: =6
+
+                            Dropdown_bed_status_1 As dropdown:
+                                Default: |
+                                    =If(IsBlank(varDropdownDefault), "--Select--", varDropdownDefault)
+                                Items: =["--Select--","Requesting","Accepted"]
+                                OnChange: |
+                                    =ClearCollect(
+                                        Collection_Bed_Tables, 
+                                        If(
+                                            Dropdown_bed_status_1.Selected.Value = "--Select--", 
+                                            Request_Cleaning_List_Tables, 
+                                            Filter(Request_Cleaning_List_Tables, Clean_Request = Dropdown_bed_status_1.Selected.Value)
+                                        )
+                                    )
+                                Width: =130
+                                ZIndex: =7
+
+                            clearallfilter_6 As label:
+                                Color: =RGBA(109, 49, 162, 1)
+                                OnSelect: |-
+                                    =Reset(searchbox_bed_patient_3);
+                                    Reset(Dropdown_bed_status_1);
+                                Text: ="Clear all filter "
+                                ZIndex: =10
+
+                        tableArea_6 As groupContainer.verticalAutoLayoutContainer:
+                            AlignInContainer: =AlignInContainer.SetByContainer
+                            FillPortions: =0
+                            Height: =550
+                            LayoutDirection: =LayoutDirection.Vertical
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =250
+                            LayoutMode: =LayoutMode.Auto
+                            LayoutOverflowX: =LayoutOverflow.Scroll
+                            Width: =Parent.Width
+                            ZIndex: =3
+
+                            galHeader_6 As groupContainer.horizontalAutoLayoutContainer:
+                                AlignInContainer: =AlignInContainer.Start
+                                FillPortions: =0
+                                Height: =50
+                                LayoutAlignItems: =LayoutAlignItems.Center
+                                LayoutMinHeight: =100
+                                LayoutMinWidth: =250
+                                LayoutMode: =LayoutMode.Auto
+                                Width: |-
+                                    =//App.ActiveScreen.Width
+                                    1600
+                                ZIndex: =1
+
+                                bedID_clean As label:
+                                    Align: =Align.Center
+                                    AlignInContainer: =AlignInContainer.Stretch
+                                    Color: =RGBA(255, 255, 255, 1)
+                                    Fill: =RGBA(102, 182, 227, 1)
+                                    FillPortions: =1
+                                    PaddingBottom: =0
+                                    PaddingTop: =0
+                                    Text: ="Bed ID"
+                                    ZIndex: =1
+
+                                BED_NO_clean As label:
+                                    Align: =Align.Center
+                                    AlignInContainer: =AlignInContainer.Stretch
+                                    Color: =RGBA(255, 255, 255, 1)
+                                    Fill: =RGBA(102, 182, 227, 1)
+                                    FillPortions: =1
+                                    PaddingBottom: =0
+                                    PaddingTop: =0
+                                    Text: ="Bed number"
+                                    ZIndex: =2
+
+                                Bay_clean As label:
+                                    Align: =Align.Center
+                                    AlignInContainer: =AlignInContainer.Stretch
+                                    Color: =RGBA(255, 255, 255, 1)
+                                    Fill: =RGBA(102, 182, 227, 1)
+                                    FillPortions: =1
+                                    PaddingBottom: =0
+                                    PaddingTop: =0
+                                    Text: ="Bay"
+                                    ZIndex: =3
+
+                                Wardname_clean As label:
+                                    Align: =Align.Center
+                                    AlignInContainer: =AlignInContainer.Stretch
+                                    Color: =RGBA(255, 255, 255, 1)
+                                    Fill: =RGBA(102, 182, 227, 1)
+                                    FillPortions: =1
+                                    PaddingBottom: =0
+                                    PaddingTop: =0
+                                    Text: ="Ward name"
+                                    ZIndex: =4
+
+                                CleanRequest As label:
+                                    Align: =Align.Center
+                                    AlignInContainer: =AlignInContainer.Stretch
+                                    Color: =RGBA(255, 255, 255, 1)
+                                    Fill: =RGBA(102, 182, 227, 1)
+                                    FillPortions: =1
+                                    PaddingBottom: =0
+                                    PaddingTop: =0
+                                    Text: ="Clean Request"
+                                    ZIndex: =5
+
+                                CleanAcceptDateTime As label:
+                                    Align: =Align.Center
+                                    AlignInContainer: =AlignInContainer.Stretch
+                                    Color: =RGBA(255, 255, 255, 1)
+                                    Fill: =RGBA(102, 182, 227, 1)
+                                    FillPortions: =1
+                                    PaddingBottom: =0
+                                    PaddingTop: =0
+                                    Text: ="Clean Accept Time"
+                                    Width: =200
+                                    ZIndex: =7
+
+                            Container12_6 As groupContainer.horizontalAutoLayoutContainer:
+                                AlignInContainer: =AlignInContainer.SetByContainer
+                                FillPortions: =0
+                                Height: =550
+                                LayoutMinHeight: =100
+                                LayoutMinWidth: =250
+                                LayoutMode: =LayoutMode.Auto
+                                LayoutOverflowX: =LayoutOverflow.Scroll
+                                Width: |
+                                    =//App.ActiveScreen.Width
+                                    1600
+                                ZIndex: =2
+
+                                "Gal_Patient_6 As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver5.0'":
+                                    AlignInContainer: =AlignInContainer.Start
+                                    DelayItemLoading: =true
+                                    Items: |
+                                        =If(
+                                            searchbox_bed_patient_3.Text = "🔎 Bed ID" && Dropdown_bed_status_1.Selected.Value = "--Select--",
+                                            Request_Cleaning_List_Tables, 
+                                            searchbox_bed_patient_3.Text <> "🔎 Bed ID" && Dropdown_bed_status_1.Selected.Value = "--Select--",
+                                            Search(Request_Cleaning_List_Tables, searchbox_bed_patient_3.Text, "cr7c7_name"),
+                                            searchbox_bed_patient_3.Text = "🔎 Bed ID" && Dropdown_bed_status_1.Selected.Value <> "--Select--",
+                                            Filter(Request_Cleaning_List_Tables, Clean_Request = Dropdown_bed_status_1.Selected.Value),
+                                            Search(Filter(Request_Cleaning_List_Tables, Clean_Request = Dropdown_bed_status_1.Selected.Value), searchbox_bed_patient_3.Text, "cr7c7_name")
+                                        )
+                                    Layout: =Layout.Vertical
+                                    LayoutMinHeight: =287
+                                    LayoutMinWidth: =320
+                                    LoadingSpinner: =LoadingSpinner.Data
+                                    ShowNavigation: |+
+                                        =false
+                                        
+                                    TemplatePadding: |
+                                        =5
+                                    TemplateSize: |
+                                        =50
+                                    Width: =Parent.Width
+                                    X: =85
+                                    Y: =125
+                                    ZIndex: =2
+
+                                    Container3_6 As groupContainer.verticalAutoLayoutContainer:
+                                        Height: =Parent.TemplateHeight
+                                        LayoutMode: =LayoutMode.Auto
+                                        Width: =Parent.Width
+                                        ZIndex: =2
+
+                                        bedID_clean_1 As label:
+                                            Align: =Align.Center
+                                            Fill: =RGBA(255, 255, 255, 1)
+                                            FillPortions: =1
+                                            PaddingBottom: =0
+                                            PaddingTop: =0
+                                            Text: =ThisItem.Bed_ID_clean
+                                            Width: =bedID_clean.Width
+                                            ZIndex: =1
+
+                                        BED_NO_clean_1 As label:
+                                            Align: =Align.Center
+                                            Fill: =RGBA(255, 255, 255, 1)
+                                            FillPortions: =1
+                                            PaddingBottom: =0
+                                            PaddingTop: =0
+                                            Text: =LookUp(Bed_Tables,Bed_ID=ThisItem.Bed_ID_clean,Bed_Number)
+                                            Width: =BED_NO_clean.Width
+                                            ZIndex: =2
+
+                                        Bay_clean_1 As label:
+                                            Align: =Align.Center
+                                            Fill: =RGBA(255, 255, 255, 1)
+                                            FillPortions: =1
+                                            PaddingBottom: =0
+                                            PaddingTop: =0
+                                            Text: =LookUp(Bed_Tables,Bed_ID=ThisItem.Bed_ID_clean,Bay)
+                                            Width: =Bay_clean.Width
+                                            ZIndex: =3
+
+                                        Wardname_clean_1 As label:
+                                            Align: =Align.Center
+                                            Fill: =RGBA(255, 255, 255, 1)
+                                            FillPortions: =1
+                                            PaddingBottom: =0
+                                            PaddingTop: =0
+                                            Text: =LookUp(Bed_Tables,Bed_ID=ThisItem.Bed_ID_clean,Ward_Name)
+                                            Width: =Wardname_clean.Width
+                                            ZIndex: =4
+
+                                        CleanRequest_1 As label:
+                                            Align: =Align.Center
+                                            DisabledFill: =RGBA(255, 255, 255, 1)
+                                            Fill: =Color.White
+                                            FillPortions: =1
+                                            PaddingBottom: =0
+                                            PaddingTop: =0
+                                            Text: =ThisItem.Clean_Request
+                                            Width: =CleanRequest.Width
+                                            ZIndex: =5
+
+                                        CleanAcceptDateTime_1 As label:
+                                            Align: =Align.Center
+                                            Fill: =RGBA(255, 255, 255, 1)
+                                            FillPortions: =1
+                                            PaddingBottom: =0
+                                            PaddingTop: =0
+                                            Text: =ThisItem.Accepted_Time_clean
+                                            Width: =CleanAcceptDateTime.Width
+                                            ZIndex: =7
+
+    Timer1_1 As timer:
+        AutoStart: =true
+        Duration: =3000
+        Height: =37
+        OnTimerEnd: =Refresh(Request_Cleaning_List_Tables)
+        Repeat: =true
+        Visible: =false
+        Width: =142
+        X: =12
+        Y: =20
+        ZIndex: =2
+

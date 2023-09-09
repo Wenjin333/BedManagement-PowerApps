@@ -1,0 +1,241 @@
+"Dashboard As screen.'tabletAutoLayout_HeaderMainFooter_ver1.0'":
+    BackgroundImage: =
+    OnVisible: =Set(IconClicked, false)
+
+    ScreenContainer2_3 As groupContainer.verticalAutoLayoutContainer:
+        Height: =Parent.Height
+        LayoutAlignItems: =LayoutAlignItems.Stretch
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutMode: =LayoutMode.Auto
+        Width: =Parent.Width
+        ZIndex: =33
+
+        HeaderContainer3_1 As groupContainer.horizontalAutoLayoutContainer:
+            FillPortions: =0
+            Height: |+
+                =75
+                
+                
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            ZIndex: =2
+
+            Heaer_PatientList_1 As Header:
+                HomeScreen: =Dashboard
+                LayoutMinHeight: =640
+                LayoutMinWidth: =640
+                ScreenSizeInput: =App.ActiveScreen.Size
+                Width: |
+                    =Parent.Width
+
+        MainSectionContainer2_3 As groupContainer.verticalAutoLayoutContainer:
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            PaddingTop: |
+                =1
+            Visible: ='Patient List'.Size<>600
+            ZIndex: =3
+
+            Container6_4 As groupContainer.horizontalAutoLayoutContainer:
+                LayoutAlignItems: =LayoutAlignItems.Stretch
+                LayoutJustifyContent: =LayoutJustifyContent.Center
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                LayoutWrap: =true
+                ZIndex: =2
+
+                LeftNav_1 As LeftNav:
+                    LayoutMinHeight: =640
+                    LayoutMinWidth: =640
+                    NavItem: |+
+                        =Table({Title: "Bed List", Screen: 'Bed List', Image:"https://cdn0.iconfinder.com/data/icons/covid-19-14/64/Bed_hospital_medical_patient_icon-512.png"}, {Title: "Patient List", Screen: 'Patient List', Image:"https://cdn3.iconfinder.com/data/icons/virus-transmission-line/48/Patient-512.png"}, {Title: "Admits", Screen: Admits, Image:"https://cdn2.iconfinder.com/data/icons/coronavirus-or-covid-19/64/Artboard_15-512.png"}, {Title: "Transfers", Screen:'Transfer List', Image:"https://cdn0.iconfinder.com/data/icons/data-transfer-14/512/N_T_1273Artboard_1_copy_2-512.png"},{Title: "Discharges", Screen:'Discharge List', Image:"https://cdn3.iconfinder.com/data/icons/basic-user-interface-5/64/Door_enter_entrance_exit_leave_logout_out_quit-512.png"}, {Title: "Waiting List", Screen: 'Waiting List', Image:"https://cdn2.iconfinder.com/data/icons/coronavirus-covid19-1/49/30-512.png"}, {Title: "Clean request List", Screen: 'Clean Request List', Image:"https://cdn2.iconfinder.com/data/icons/brush-set-free/512/broom_stick_3-512.png"}, {Title: "RFID Code", Screen: 'RFID Code', Image:"https://cdn2.iconfinder.com/data/icons/sale-and-discount/32/Sale_and_Discount-05-512.png"})
+                        
+                    Width: =LeftNav_1.MenuWidth
+                    ZIndex: =2
+
+                Container25 As groupContainer.horizontalAutoLayoutContainer:
+                    Height: =300
+                    LayoutAlignItems: =LayoutAlignItems.Stretch
+                    LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+                    LayoutMinHeight: =300
+                    LayoutMinWidth: =200
+                    LayoutMode: =LayoutMode.Auto
+                    LayoutOverflowY: =LayoutOverflow.Scroll
+                    LayoutWrap: =true
+                    Width: =Parent.Width
+                    ZIndex: =3
+
+                    Container17 As groupContainer.verticalAutoLayoutContainer:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        Height: =300
+                        LayoutAlignItems: =LayoutAlignItems.Stretch
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutJustifyContent: =LayoutJustifyContent.Center
+                        LayoutMinHeight: =200
+                        LayoutMinWidth: =250
+                        LayoutMode: =LayoutMode.Auto
+                        Width: =300
+                        ZIndex: =2
+
+                        "'bed icon' As image":
+                            BorderColor: =RGBA(0, 0, 0, 1)
+                            Image: =bed
+                            OnSelect: =Navigate('Bed List')
+                            X: =38
+                            Y: =39
+                            ZIndex: =1
+
+                        Label5 As label:
+                            Align: =Align.Center
+                            FontWeight: =FontWeight.Bold
+                            Height: =39
+                            OnSelect: =
+                            Size: =20
+                            Text: ="Bed Utilization"
+                            Width: =228
+                            X: =34
+                            Y: =36
+                            ZIndex: =2
+
+                        Label6 As label:
+                            Align: =Align.Center
+                            Color: =RGBA(38, 160, 65, 1)
+                            Height: =29
+                            OnSelect: =
+                            Size: =16
+                            Text: |-
+                                ="Occupied: " & Text(RoundDown(CountRows(Filter(Bed_Tables, Bed_Status_t = "Admitted")) / CountRows(Bed_Tables) * 100, 2), "0.00%")
+                            Width: =175
+                            X: =26
+                            Y: =120
+                            ZIndex: =3
+
+                    Container20 As groupContainer.verticalAutoLayoutContainer:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        LayoutAlignItems: =LayoutAlignItems.Stretch
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutJustifyContent: =LayoutJustifyContent.Center
+                        LayoutMinHeight: =200
+                        LayoutMinWidth: =250
+                        LayoutMode: =LayoutMode.Auto
+                        ZIndex: =3
+
+                        Label8 As label:
+                            Align: =Align.Center
+                            Color: =RGBA(36, 133, 2, 1)
+                            FontWeight: =FontWeight.Bold
+                            Height: =77
+                            Size: =35
+                            Text: =CountRows(Filter(Patient_Tables, Patient_status_t = "Waiting Bed"))
+                            Width: =73
+                            X: =37
+                            Y: =39
+                            ZIndex: =1
+
+                        Label9 As label:
+                            Align: =Align.Center
+                            FontWeight: =FontWeight.Bold
+                            Height: =39
+                            Size: =20
+                            Text: ="ER Waiting"
+                            Width: =168
+                            X: =44
+                            Y: =60
+                            ZIndex: =2
+
+                    Container18 As groupContainer.verticalAutoLayoutContainer:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        LayoutAlignItems: =LayoutAlignItems.Stretch
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutJustifyContent: =LayoutJustifyContent.Center
+                        LayoutMinHeight: =200
+                        LayoutMinWidth: =250
+                        LayoutMode: =LayoutMode.Auto
+                        ZIndex: =4
+
+                        Image1 As image:
+                            Height: =120
+                            Image: =fast
+                            OnSelect: =Navigate(FastAdmission)
+                            Width: =180
+                            X: =16
+                            Y: =66
+                            ZIndex: =1
+
+                        Label11 As label:
+                            Align: =Align.Center
+                            FontWeight: =FontWeight.Bold
+                            Height: =49
+                            OnSelect: =Navigate(FastAdmission)
+                            Size: =20
+                            Text: ="Fast Admission"
+                            Width: =217
+                            X: =76
+                            Y: =81
+                            ZIndex: =2
+
+                    Container20_4 As groupContainer.verticalAutoLayoutContainer:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        LayoutAlignItems: =LayoutAlignItems.Stretch
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutJustifyContent: =LayoutJustifyContent.Center
+                        LayoutMinHeight: =200
+                        LayoutMinWidth: =250
+                        LayoutMode: =LayoutMode.Auto
+                        ZIndex: =5
+
+                        Icon4 As icon.OptionsList:
+                            Color: =RGBA(0, 0, 0, 1)
+                            Height: =70
+                            Icon: =Icon.OptionsList
+                            OnSelect: =Navigate('Waiting List')
+                            Width: =109
+                            X: =16
+                            Y: =78
+                            ZIndex: =1
+
+                        Label12 As label:
+                            Align: =Align.Center
+                            FontWeight: =FontWeight.Bold
+                            Height: =47
+                            OnSelect: =Navigate('Waiting List')
+                            Size: =20
+                            Text: ="Waiting List"
+                            Width: =180
+                            X: =60
+                            Y: =22
+                            ZIndex: =2
+
+                    Container20_5 As groupContainer.verticalAutoLayoutContainer:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        LayoutAlignItems: =LayoutAlignItems.Stretch
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutJustifyContent: =LayoutJustifyContent.Center
+                        LayoutMinHeight: =200
+                        LayoutMinWidth: =250
+                        LayoutMode: =LayoutMode.Auto
+                        ZIndex: =6
+
+                        Image2 As image:
+                            Height: =70
+                            Image: =transferring
+                            LayoutMinWidth: =90
+                            Width: =109
+                            X: =35
+                            Y: =12
+                            ZIndex: =1
+
+                        Label13 As label:
+                            Align: =Align.Center
+                            FontWeight: =FontWeight.Bold
+                            Height: =60
+                            Size: =20
+                            Text: ="Transfers"
+                            X: =68
+                            Y: =86
+                            ZIndex: =2
+
